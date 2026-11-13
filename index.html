@@ -419,223 +419,750 @@
   ];
 
   const RAW_MOVIES = [
-    [1,'B','b','m','Khoj','2017'],[1,'B','b','m','Dracula Sir','2020'],[1,'B','b','s','Karagar','2022'],
-    [1,'B','i','m','Vinci Da','2019'],[1,'B','i','m','Khawto','2016'],[1,'B','i','m','89','2015'],
-    [1,'B','p','m','Peyarar Subash','2024'],[1,'H','b','m','Darr','1993'],[1,'H','b','m','Aitbaar','1985'],
-    [1,'H','b','m','Table No. 21','2013'],[1,'H','b','m','Karthik Calling Karthik','2010'],[1,'H','i','m','404: Error Not Found','2011'],
-    [1,'H','i','mb','Ugly','2013'],[1,'H','p','m','No Smoking','2007'],[1,'E','b','m','The Game','1997'],
-    [1,'E','b','m','The Sixth Sense','1999'],[1,'E','b','m','Fractured','2019'],[1,'E','b','m','The Number 23','2007'],
-    [1,'E','b','m','Obsession','2025'],[1,'E','i','m','Shutter Island','2010'],[1,'E','i','m','The Prestige','2006'],
-    [1,'E','i','m','The Machinist','2004'],[1,'E','i','m','Eyes Wide Shut','1999'],[1,'E','i','m','Clayface','2026'],
-    [1,'E','p','m','Requiem for a Dream','2000'],[1,'E','p','m','Donnie Darko','2001'],[1,'E','p','m','Mulholland Dr.','2001'],
-    [1,'E','p','m','Inland Empire','2006'],[1,'O','b','m','Forgotten','2017','Korean'],[1,'O','i','m','Bhoothakaalam','2022','Malayalam'],
-    [1,'O','i','m','Uyir','2026','Tamil'],[1,'O','p','m','Ravening [Aamis]','2019','Assamese'],[1,'O','p','m','Burning','2018','Korean'],
-    [2,'B','b','m','Bornoporichoy','2019'],[2,'B','b','m','Raktabeej','2023'],[2,'B','b','s','Abar Proloy','2023'],
-    [2,'B','b','s','Chhotolok','2023'],[2,'B','bi','s','Kaalpurush & Golam Mamun','2024'],[2,'B','i','m','Baishe Srabon','2011'],
-    [2,'B','i','m','Dwitiyo Purush','2020'],[2,'B','i','m','Chaalchitro: The Frame Fatale','2024'],[2,'B','i','s','Mohanagar','2021'],
-    [2,'B','i','s','Taqdeer','2020'],[2,'B','i','m','Mrigaya: The Hunt','2025'],[2,'B','p','m','Live from Dhaka','2016'],
-    [2,'H','b','m','Sangharsh','1999'],[2,'H','b','m','Samay: When Time Strikes','2003'],[2,'H','b','m','Aamir','2008'],
-    [2,'H','i','m','The Stoneman Murders','2009'],[2,'H','i','m','Manorama Six Feet Under','2007'],[2,'H','i','m','Sehar','2005'],
-    [2,'H','p','m','Black Friday','2004'],[2,'E','b','m','The Silence of the Lambs','1991'],[2,'E','b','m','Seven [Se7en]','1995'],
-    [2,'E','b','s','Presumed Innocent','2024'],[2,'E','b','m','The Girl with the Dragon Tattoo','2011'],[2,'E','b','m','The Clovehitch Killer','2018'],
-    [2,'E','i','m','Prisoners','2013'],[2,'E','i','s','Manhunt: Unabomber','2017'],[2,'E','i','m','Nightcrawler','2014'],
-    [2,'E','i','m','Chinatown','1974'],[2,'E','p','m','Zodiac','2007'],[2,'E','p','s','Under the Banner of Heaven','2022'],
-    [2,'O','b','m','Anjaam Pathiraa','2020','Malayalam'],[2,'O','b','m','Memories','2013','Malayalam'],[2,'O','i','m','Maharaja','2024','Tamil'],
-    [2,'O','i','m','Iratta','2023','Malayalam'],[2,'O','i','m','Rekhachithram','2025','Malayalam'],[2,'O','i','m','Valathu Vashathe Kallan','2026','Malayalam'],
-    [2,'O','p','m','Ela Veezha Poonchira','2022','Malayalam'],[3,'B','b','m','Sonar Kella','1974'],[3,'B','b','m','Joy Baba Felunath','1979'],
-    [3,'B','b','m','Karnasubarner Guptodhon','2022'],[3,'B','b','m','The Eken Franchise',''],[3,'B','b','m','Hatyapuri','2022'],
-    [3,'B','b','m','Byomkesh Bakshi','2010'],[3,'B','b','m','Har Har Byomkesh','2015'],[3,'B','b','m','Byomkesh Phire Elo','2014'],
-    [3,'B','b','m','Byomkesh Pawrbo','2016'],[3,'B','b','m','Byomkesh Hotyamancha','2022'],[3,'B','b','m','Byomkesh O Durgo Rahasya','2023'],
-    [3,'B','b','m','Abar Byomkesh','2011'],[3,'B','b','s','Byomkesh (Web Series)','2017'],[3,'B','b','m','Madam Sengupta','2025'],
-    [3,'B','b','m','Saralakkho Holmes','2025'],[3,'B','b','m','Antardhaan','2021'],[3,'B','b','m','Redrum','2022'],
-    [3,'B','i','m','Chiriakhana','1967'],[3,'B','i','m','Byomkesh O Chiriakhana','2016'],[3,'B','i','m','Ebar Shabor','2015'],
-    [3,'B','i','m','Eagoler Chokh','2016'],[3,'B','i','m','Nirbandhamer Jora Khun','2020'],[3,'B','i','m','Munshigiri','2021'],
-    [3,'B','i','m','Shubho Mahurat','2003'],[3,'B','i','m','Chotushkone','2014'],[3,'B','i','s','Kaiser','2022'],
-    [3,'B','i','m','Rabindra Kabya Rahasya','2023'],[3,'B','p','m','Meghnadbodh Rohoshyo','2017'],[3,'H','b','m','Kahaani','2012'],
-    [3,'H','i','m','3 Deewarein','2003'],[3,'H','i','m','Being Cyrus','2005'],[3,'E','b','m','Searching','2018'],
-    [3,'E','b','m','The Nice Guys','2016'],[3,'E','i','m','Identity','2003'],[3,'E','i','m','The Words','2012'],
-    [3,'E','p','m','Anatomy of a Murder','1959'],[3,'O','b','m','The Invisible Guest [Contratiempo]','2016','Spanish'],
-    [3,'O','b','m','Golam','2024','Malayalam'],[3,'O','i','m','Kishkindha Kaandam','2024','Malayalam'],[3,'O','p','m','Anatomy of a Fall','2023','French'],
-    [4,'B','b','m','Dard','2024'],[4,'B','b','m','Daagi','2025'],[4,'B','b','m','Pressure Cooker','2026'],
-    [4,'B','i','m','Shororipu 2: Jotugriho','2021'],[4,'H','b','m','Crazxy','2025'],[4,'E','i','m','Cape Fear','2026'],
-    [4,'O','bi','m','Drishyam Film Series','2013','Malayalam / Hindi'],[4,'O','i','m','Eko','2025','Malayalam'],
-    [5,'B','ip','m','Janowar','2021'],[5,'H','i','m','Welcome Home','2020'],[5,'E','b','m','Panic Room','2002'],
-    [5,'E','b','m','Hush','2016'],[5,'E','b','m','Don\'t Breathe','2016'],[5,'E','b','m','You\'re Next','2011'],
-    [5,'E','i','m','Misery','1990'],[5,'E','i','m','10 Cloverfield Lane','2016'],[5,'E','i','m','The Strangers','2008'],
-    [5,'E','i','m','Knock Knock','2015'],[5,'E','p','m','Funny Games','2007'],[5,'O','i','m','A Man Escaped','1956','French'],
-    [6,'B','b','m','Debi','2018'],[6,'B','i','m','Hawa','2022'],[6,'B','i','s','Pett Kata Shaw & Dui Shaw','2022'],
-    [6,'H','i','m','Tumbbad','2018'],[6,'E','b','m','The Conjuring','2013'],[6,'E','i','m','Midsommar','2019'],
-    [6,'E','p','m','Backrooms','2026'],[6,'O','i','m','The Medium','2021','Thai'],[6,'O','i','m','Incantation','2022','Taiwanese'],
-    [6,'O','p','mb','Cure','1997','Japanese'],[6,'O','p','m','Bramayugam','2024','Malayalam'],[6,'O','p','m','The Wailing','2016','Korean'],
-    [7,'B','b','m','Poran','2022'],[7,'B','b','m','Khadaan','2024'],[7,'B','b','m','Bohurupi','2024'],
-    [7,'B','b','m','Surongo','2023'],[7,'B','b','s','Syndicate & Myself Allen Swapan','2022'],[7,'B','b','s','Black Money','2024'],
-    [7,'B','i','m','Aynabaji','2016'],[7,'B','i','s','Mandaar','2021'],[7,'H','b','m','Baazigar','1993'],
-    [7,'H','b','m','Laal Rang','2016'],[7,'H','b','s','Mirzapur','2018'],[7,'H','i','m','A Wednesday','2008'],
-    [7,'H','i','mb','Gangs of Wasseypur','2012'],[7,'E','b','m','Drive','2011'],[7,'E','b','m','Reservoir Dogs','1992'],
-    [7,'E','b','m','The Departed','2006'],[7,'E','b','m','Lord of War','2005'],[7,'E','b','m','Lords of War','2027'],
-    [7,'E','b','m','The Only Living Pickpocket in New York','2026'],[7,'E','b','m','Wild Horse Nine','2026'],
-    [7,'E','i','m','Pulp Fiction','1994'],[7,'E','i','m','Boogie Nights','1997'],[7,'E','p','m','The Irishman','2019'],
-    [7,'O','i','m','Nayakan','1987','Tamil'],[7,'O','i','m','Vada Chennai','2018','Tamil'],[7,'O','i','m','Oldboy','2003','Korean'],
-    [8,'B','i','s','Bodh','2022'],[8,'E','b','s','Suits','2011'],[8,'E','bi','m','The Social Network','2010'],
-    [8,'E','bi','s','WAR','2026'],[8,'E','ip','m','12 Angry Men','1957'],[9,'B','b','m','Monpura','2009'],
-    [9,'B','b','m','Bela Seshe','2015'],[9,'B','b','m','Praktan','2016'],[9,'B','b','m','Sweater','2019'],
-    [9,'B','b','s','Subharambha',''],[9,'B','i','m','Bishorjan','2017'],[9,'B','i','m','Ajogyo','2024'],
-    [9,'B','i','s','Indubala Bhaater Hotel','2023'],[9,'B','i','m','Doob: No Bed of Roses','2017'],[9,'B','i','m','Apur Panchali','2013'],
-    [9,'B','i','m','Chitrangada: The Crowning Wish','2012'],[9,'B','i','m','Antaheen','2009'],[9,'B','i','m','The Japanese Wife','2010'],
-    [9,'B','p','m','Meghe Dhaka Tara','1960'],[9,'B','p','m','Rehana Maryam Noor','2021'],[9,'B','p','m','Asha Jaoar Majhe [Labour of Love]','2014'],
-    [9,'H','b','m','Anand','1971'],[9,'H','i','m','Firaaq','2008'],[9,'E','b','m','The Pursuit of Happyness','2006'],
-    [9,'E','b','m','Hachi: A Dog\'s Tale','2009'],[9,'E','b','m','The Green Mile','1999'],[9,'E','b','m','Stronger','2017'],
-    [9,'E','b','m','The Majestic','2001'],[9,'E','i','m','The Pianist','2002'],[9,'E','i','m','Into the Wild','2007'],
-    [9,'E','i','m','Half Nelson','2006'],[9,'E','i','m','Manchester by the Sea','2016'],[9,'E','i','m','Gran Torino','2008'],
-    [9,'E','i','m','Wildlife','2018'],[9,'E','i','m','Waves','2019'],[9,'E','i','m','Last Man in Tower','2026'],
-    [9,'E','ip','m','All That Jazz','1979'],[9,'E','p','mb','The Banshees of Inisherin','2022'],[9,'E','p','m','Magnolia','1999'],
-    [9,'O','b','m','Kumbalangi Nights','2019','Malayalam'],[9,'O','b','m','Life Is Beautiful','1997','Italian'],
-    [9,'O','b','m','Mucize','2015','Turkish'],[9,'O','i','m','Grave of the Fireflies','1988','Japanese'],
-    [9,'O','i','m','Ponette','1996','French'],[9,'O','p','m','To Live [Ikiru]','1952','Japanese'],
-    [10,'B','bi','m','Pather Panchali','1955'],[10,'B','bi','m','Aparajito','1956'],[10,'B','bi','m','Apur Sansar','1959'],
-    [10,'B','bi','m','Galpo Holeo Satti','1966'],[10,'B','bi','m','Saptapadi','1961'],[10,'B','bi','m','Shonkhonil Karagar','1992'],
-    [10,'B','bi','m','Nondito Noroke','2006'],[10,'B','i','m','Nayak: The Hero','1966'],[10,'B','i','m','Aranyer Din Ratri [Days and Nights in the Forest]','1970'],
-    [10,'B','i','m','Interview','1971'],[10,'B','p','m','Devi','1960'],[10,'B','p','m','Charulata','1964'],
-    [10,'B','p','m','Teen Kanya','1961'],[10,'B','p','m','Jalsaghar [The Music Room]','1958'],[10,'B','p','m','Subarnarekha','1965'],
-    [10,'B','p','m','Komal Gandhar','1961'],[10,'B','p','m','Surja Dighal Bari','1979'],[10,'B','p','m','The Clay Bird [Matir Moina]','2002'],
-    [10,'H','i','m','Pyaasa','1957'],[10,'H','i','m','Party','1984'],[10,'E','bi','m','Citizen Kane','1941'],
-    [10,'O','p','m','The Seventh Seal','1957','Swedish'],[11,'B','b','m','Sharey Chuattor','1953'],
-    [11,'B','b','m','Ogo Bodhu Shundori','1981'],[11,'B','b','m','Daruchini Dwip','2007'],[11,'B','b','m','Bhuto Purbo','2025'],
-    [11,'B','b','s','Bohemian Ghora','2023'],[11,'B','b','s','Fyakra','2025'],[11,'H','b','m','Hera Pheri','2000'],
-    [11,'H','b','m','Dhamaal Film Series','2007'],[11,'H','b','m','Welcome','2007'],[11,'H','b','m','Chup Chup Ke','2006'],
-    [11,'H','b','m','Golmaal Film Series','2006'],[11,'H','b','m','Housefull Film Series',''],[11,'H','b','m','Bhagam Bhag','2006'],
-    [11,'H','b','m','Garam Masala','2005'],[11,'H','b','m','De Dana Dan','2009'],[11,'H','b','m','All the Best: Fun Begins','2009'],
-    [11,'H','b','m','Bol Bachchan','2012'],[11,'H','b','m','One Two Three','2008'],[11,'H','b','m','Heyy Babyy','2007'],
-    [11,'H','b','m','Chandni Chowk to China','2009'],[11,'H','b','m','No Problem','2010'],[11,'H','b','m','Tees Maar Khan','2010'],
-    [11,'H','b','m','Go Goa Gone','2013'],[11,'H','b','m','Entertainment','2014'],[11,'H','i','m','Andaz Apna Apna','1994'],
-    [11,'H','i','m','Angoor','1982'],[11,'H','i','m','Wild Wild Punjab','2024'],[11,'E','b','m','The Mask','1994'],
-    [11,'E','b','m','Liar Liar','1997'],[11,'E','b','m','Ace Ventura: Pet Detective','1994'],[11,'E','b','m','Dumb and Dumber','1994'],
-    [11,'E','b','m','Bruce Almighty','2003'],[11,'E','b','m','Ratatouille','2007'],[11,'E','b','m','Who Am I?','1998'],
-    [11,'E','b','m','The F-It List','2020'],[11,'E','i','m','Airplane!','1980'],[11,'E','i','m','The Naked Gun','1988'],
-    [11,'E','i','m','Spaceballs','1987'],[11,'E','i','m','Not Another Teen Movie','2001'],[12,'B','bi','m','Mahapurush','1965'],
-    [12,'B','bi','m','Television','2012'],[12,'B','bi','m','Bhooter Bhabishyat','2012'],[12,'B','i','m','Goynar Baksho','2013'],
-    [12,'B','i','m','Hemlock Society','2012'],[12,'B','i','m','The Calcutta Files','2026'],[12,'H','b','m','Phas Gaye Re Obama','2010'],
-    [12,'H','b','m','Malamaal Weekly','2006'],[12,'H','i','m','Jaane Bhi Do Yaaro','1983'],[12,'H','i','m','Kabul Express','2006'],
-    [12,'H','p','m','Om-Dar-B-Dar','1988'],[12,'E','b','m','The Truman Show','1998'],[12,'E','b','m','The Secret Life of Walter Mitty','2013'],
-    [12,'E','i','m','The Big Short','2015'],[12,'E','i','m','One Battle After Another','2025'],[12,'E','i','m','Man on the Moon','1999'],
-    [12,'E','i','m','Sausage Party','2016'],[12,'E','i','s','Curb Your Enthusiasm','2000'],[12,'E','i','m','Ali Wong: Hard Knock Wife','2018'],
-    [12,'O','bi','m','Parasite','2019','Korean'],[12,'O','ip','m','Super Deluxe','2019','Tamil'],[13,'B','b','m','Parineeta',''],
-    [13,'B','b','m','Datta','1976'],[13,'B','b','m','Dui Duari','2000'],[13,'B','b','m','Krishnopokkho','2016'],
-    [13,'B','i','m','Chokher Bali','2003'],[13,'B','i','m','Noukadubi','2010'],[13,'B','i','m','Devdas','1979'],
-    [13,'B','i','s','Srikanto','2022'],[13,'B','p','m','Rajlokhi O Srikanto','2019'],[13,'H','b','m','Partner','2007'],
-    [13,'H','b','m','Mere Baap Pehle Aap','2008'],[13,'H','b','m','The Lunchbox','2013'],[13,'H','i','m','Dev.D','2009'],
-    [13,'E','b','m','Pretty Woman','1990'],[13,'E','b','m','The Princess Diaries','2001'],[13,'E','b','m','How to Lose a Guy in 10 Days','2003'],
-    [13,'E','b','m','27 Dresses','2008'],[13,'E','b','m','Confessions of a Shopaholic','2009'],[13,'E','i','m','La La Land','2016'],
-    [13,'E','i','m','Blue Valentine','2010'],[13,'E','ip','m','Phantom Thread','2017'],[13,'E','p','m','Eternal Sunshine of the Spotless Mind','2004'],
-    [14,'B','b','m','Bony','2021'],[14,'E','b','m','The Iron Giant','1999'],[14,'E','b','m','Edge of Tomorrow','2014'],
-    [14,'E','b','m','Minority Report','2002'],[14,'E','b','m','Source Code','2011'],[14,'E','b','m','The Butterfly Effect','2004'],
-    [14,'E','b','m','Oblivion','2013'],[14,'E','i','m','Looper','2012'],[14,'E','i','m','Triangle','2009'],
-    [14,'E','i','m','Moon','2009'],[14,'E','i','m','Caddo Lake','2024'],[14,'E','ip','s','The OA','2016'],
-    [14,'E','ip','m','Blade Runner 2049','2017'],[14,'E','p','m','Vanilla Sky','2001'],[14,'E','p','m','Primer','2004'],
-    [14,'O','i','m','The Platform [El Hoyo]','2019','Spanish'],[15,'B','b','m','Hirak Rajar Deshe','1980'],
-    [15,'B','b','m','Aguner Poroshmoni','1994'],[15,'B','b','m','Kajolrekha','2024'],[15,'B','b','m','Haajar Bachhor Dhorey','2005'],
-    [15,'B','i','m','Guerrilla','2011'],[15,'H','b','m','Sholay','1975'],[15,'H','b','m','Hunkkaar: The Roar','2026'],
-    [15,'E','b','m','Gladiator','2000'],[15,'E','b','m','The Lord of the Rings Trilogy','2001'],[15,'E','b','m','Braveheart','1995'],
-    [15,'E','i','m','The Last Samurai','2003'],[15,'E','i','m','Kingdom of Heaven [Director\'s Cut]','2005'],[15,'E','i','m','The Uprising','2026'],
-    [15,'E','p','m','Barry Lyndon','1975'],[15,'O','b','m','Mayabazar','1957','Telugu'],[15,'O','p','m','Ran','1985','Japanese'],
-    [16,'H','b','m','Taandav','2016'],[16,'H','b','m','Teaspoon','2015'],[16,'H','i','m','Kriti','2016'],
-    [16,'H','i','m','Dum Dum Dumroo','2018'],[16,'H','p','m','Rogan Josh','2018'],[16,'H','p','m','Mamta Tonic','2015']
+    // 1. Psychological Thriller
+    [1,'B','b','m','Khoj','2017'],
+    [1,'B','b','m','Dracula Sir','2020'],
+    [1,'B','b','s','Karagar','2022'],
+    [1,'B','i','m','Vinci Da','2019'],
+    [1,'B','i','m','Khawto','2016'],
+    [1,'B','i','m','89','2015'],
+    [1,'B','p','m','Peyarar Subash','2024'],
+    [1,'H','b','m','Darr','1993'],
+    [1,'H','b','m','Aitbaar','1985'],
+    [1,'H','b','m','Table No. 21','2013'],
+    [1,'H','b','m','Karthik Calling Karthik','2010'],
+    [1,'H','i','m','404: Error Not Found','2011'],
+    [1,'H','i','mb','Ugly','2013'],
+    [1,'H','p','m','No Smoking','2007'],
+    [1,'E','b','m','The Game','1997'],
+    [1,'E','b','m','The Sixth Sense','1999'],
+    [1,'E','b','m','Fractured','2019'],
+    [1,'E','b','m','The Number 23','2007'],
+    [1,'E','b','m','Obsession','2025'],
+    [1,'E','i','m','Gone Girl','2014'],
+    [1,'E','i','m','Shutter Island','2010'],
+    [1,'E','i','m','The Prestige','2006'],
+    [1,'E','i','m','The Machinist','2004'],
+    [1,'E','i','m','Eyes Wide Shut','1999'],
+    [1,'E','i','m','Clayface','2026'],
+    [1,'E','p','m','Vertigo','1958'],
+    [1,'E','p','s','Mr. Robot','2015'],
+    [1,'E','p','m','Requiem for a Dream','2000'],
+    [1,'E','p','m','Donnie Darko','2001'],
+    [1,'E','p','m','Mulholland Dr.','2001'],
+    [1,'E','p','m','Inland Empire','2006'],
+    [1,'O','b','m','Forgotten','2017','Korean'],
+    [1,'O','i','m','The Handmaiden','2016','Korean'],
+    [1,'O','i','m','Bhoothakaalam','2022','Malayalam'],
+    [1,'O','i','m','Uyir','2026','Tamil'],
+    [1,'O','p','m','The Vanishing [Spoorloos]','1988','Dutch / French'],
+    [1,'O','p','m','Caché','2005','French'],
+    [1,'O','p','m','Ravening [Aamis]','2019','Assamese'],
+    [1,'O','p','m','Burning','2018','Korean'],
+
+    // 2. Police Procedural & Neo-Noir
+    [2,'B','b','m','Bornoporichoy','2019'],
+    [2,'B','b','m','Raktabeej','2023'],
+    [2,'B','b','s','Abar Proloy','2023'],
+    [2,'B','b','s','Chhotolok','2023'],
+    [2,'B','bi','s','Kaalpurush & Golam Mamun','2024'],
+    [2,'B','i','m','Baishe Srabon','2011'],
+    [2,'B','i','m','Dwitiyo Purush','2020'],
+    [2,'B','i','m','Chaalchitro: The Frame Fatale','2024'],
+    [2,'B','i','s','Mohanagar','2021'],
+    [2,'B','i','s','Taqdeer','2020'],
+    [2,'B','i','m','Mrigaya: The Hunt','2025'],
+    [2,'B','p','m','Live from Dhaka','2016'],
+    [2,'H','b','m','Sangharsh','1999'],
+    [2,'H','b','m','Samay: When Time Strikes','2003'],
+    [2,'H','b','m','Aamir','2008'],
+    [2,'H','i','m','Talvar','2015'],
+    [2,'H','i','m','The Stoneman Murders','2009'],
+    [2,'H','i','m','Manorama Six Feet Under','2007'],
+    [2,'H','i','m','Sehar','2005'],
+    [2,'H','p','m','Black Friday','2004'],
+    [2,'E','b','m','The Silence of the Lambs','1991'],
+    [2,'E','b','m','Seven [Se7en]','1995'],
+    [2,'E','b','s','Presumed Innocent','2024'],
+    [2,'E','b','m','The Girl with the Dragon Tattoo','2011'],
+    [2,'E','b','m','The Clovehitch Killer','2018'],
+    [2,'E','bi','m','Wind River','2017'],
+    [2,'E','i','m','Prisoners','2013'],
+    [2,'E','i','m','Mystic River','2003'],
+    [2,'E','i','m','The French Connection','1971'],
+    [2,'E','i','s','Manhunt: Unabomber','2017'],
+    [2,'E','i','m','Nightcrawler','2014'],
+    [2,'E','i','m','Chinatown','1974'],
+    [2,'E','p','s','True Detective','2014'],
+    [2,'E','p','s','The Wire','2002'],
+    [2,'E','p','m','Zodiac','2007'],
+    [2,'E','p','s','Under the Banner of Heaven','2022'],
+    [2,'O','b','m','Ratsasan','2018','Tamil'],
+    [2,'O','b','m','Anjaam Pathiraa','2020','Malayalam'],
+    [2,'O','b','m','Memories','2013','Malayalam'],
+    [2,'O','bi','m','Kavaludaari','2019','Kannada'],
+    [2,'O','i','m','Dhuruvangal Pathinaaru [D-16]','2016','Tamil'],
+    [2,'O','i','s','Vadhandhi: The Fable of Velonie','2022','Tamil'],
+    [2,'O','i','m','Maharaja','2024','Tamil'],
+    [2,'O','i','m','Iratta','2023','Malayalam'],
+    [2,'O','i','m','Rekhachithram','2025','Malayalam'],
+    [2,'O','i','m','Valathu Vashathe Kallan','2026','Malayalam'],
+    [2,'O','i','m','No Mercy','2010','Korean'],
+    [2,'O','ip','m','I Saw the Devil','2010','Korean'],
+    [2,'O','p','m','Memories of Murder','2003','Korean'],
+    [2,'O','p','m','Decision to Leave','2022','Korean'],
+    [2,'O','p','m','M','1931','German'],
+    [2,'O','p','m','Ela Veezha Poonchira','2022','Malayalam'],
+
+    // 3. Whodunit & Literary Mystery
+    [3,'B','b','m','Sonar Kella','1974'],
+    [3,'B','b','m','Joy Baba Felunath','1979'],
+    [3,'B','b','m','Karnasubarner Guptodhon','2022'],
+    [3,'B','b','m','The Eken Franchise',''],
+    [3,'B','b','m','Hatyapuri','2022'],
+    [3,'B','b','m','Byomkesh Bakshi','2010'],
+    [3,'B','b','m','Har Har Byomkesh','2015'],
+    [3,'B','b','m','Byomkesh Phire Elo','2014'],
+    [3,'B','b','m','Byomkesh Pawrbo','2016'],
+    [3,'B','b','m','Byomkesh Hotyamancha','2022'],
+    [3,'B','b','m','Byomkesh O Durgo Rahasya','2023'],
+    [3,'B','b','m','Abar Byomkesh','2011'],
+    [3,'B','b','s','Byomkesh (Web Series)','2017'],
+    [3,'B','b','m','Madam Sengupta','2025'],
+    [3,'B','b','m','Saralakkho Holmes','2025'],
+    [3,'B','b','m','Antardhaan','2021'],
+    [3,'B','b','m','Redrum','2022'],
+    [3,'B','i','m','Chiriakhana','1967'],
+    [3,'B','i','m','Byomkesh O Chiriakhana','2016'],
+    [3,'B','i','m','Ebar Shabor','2015'],
+    [3,'B','i','m','Eagoler Chokh','2016'],
+    [3,'B','i','m','Nirbandhamer Jora Khun','2020'],
+    [3,'B','i','m','Munshigiri','2021'],
+    [3,'B','i','m','Shubho Mahurat','2003'],
+    [3,'B','i','m','Chotushkone','2014'],
+    [3,'B','i','s','Kaiser','2022'],
+    [3,'B','i','m','Rabindra Kabya Rahasya','2023'],
+    [3,'B','p','m','Meghnadbodh Rohoshyo','2017'],
+    [3,'H','b','m','Kahaani','2012'],
+    [3,'H','i','m','3 Deewarein','2003'],
+    [3,'H','i','m','Being Cyrus','2005'],
+    [3,'E','b','m','Searching','2018'],
+    [3,'E','b','m','The Nice Guys','2016'],
+    [3,'E','i','m','The Usual Suspects','1995'],
+    [3,'E','i','m','Identity','2003'],
+    [3,'E','i','m','The Words','2012'],
+    [3,'E','i','m','Laura','1944'],
+    [3,'E','i','m','The Maltese Falcon','1941'],
+    [3,'E','p','m','Anatomy of a Murder','1959'],
+    [3,'O','b','m','Agent Sai Srinivasa Athreya','2019','Telugu'],
+    [3,'O','b','m','The Invisible Guest [Contratiempo]','2016','Spanish'],
+    [3,'O','b','m','Golam','2024','Malayalam'],
+    [3,'O','bi','m','Evaru','2019','Telugu'],
+    [3,'O','i','m','Kishkindha Kaandam','2024','Malayalam'],
+    [3,'O','p','m','Anatomy of a Fall','2023','French'],
+
+    // 4. Suspense & Retribution
+    [4,'B','b','m','Dard','2024'],
+    [4,'B','b','m','Daagi','2025'],
+    [4,'B','b','m','Pressure Cooker','2026'],
+    [4,'B','i','m','Shororipu 2: Jotugriho','2021'],
+    [4,'H','b','m','Crazxy','2025'],
+    [4,'E','i','m','Cape Fear','2026'],
+    [4,'O','bi','m','Drishyam Film Series','2013','Malayalam / Hindi'],
+    [4,'O','i','m','Eko','2025','Malayalam'],
+
+    // 5. Home Invasion & Survival
+    [5,'B','ip','m','Janowar','2021'],
+    [5,'H','i','m','Welcome Home','2020'],
+    [5,'E','b','m','Panic Room','2002'],
+    [5,'E','b','m','Hush','2016'],
+    [5,'E','b','m','Don\'t Breathe','2016'],
+    [5,'E','b','m','You\'re Next','2011'],
+    [5,'E','i','m','Misery','1990'],
+    [5,'E','i','m','10 Cloverfield Lane','2016'],
+    [5,'E','i','m','The Strangers','2008'],
+    [5,'E','i','m','Knock Knock','2015'],
+    [5,'E','p','m','Funny Games','2007'],
+    [5,'O','i','m','A Man Escaped','1956','French'],
+
+    // 6. Supernatural & Folk Horror
+    [6,'B','b','m','Debi','2018'],
+    [6,'B','i','m','Hawa','2022'],
+    [6,'B','i','s','Pett Kata Shaw & Dui Shaw','2022'],
+    [6,'H','i','m','Tumbbad','2018'],
+    [6,'E','b','m','The Conjuring','2013'],
+    [6,'E','i','m','Midsommar','2019'],
+    [6,'E','p','m','Backrooms','2026'],
+    [6,'O','i','m','The Medium','2021','Thai'],
+    [6,'O','i','m','Incantation','2022','Taiwanese'],
+    [6,'O','p','mb','Cure','1997','Japanese'],
+    [6,'O','p','m','Bramayugam','2024','Malayalam'],
+    [6,'O','p','m','The Wailing','2016','Korean'],
+
+    // 7. Underworld Noir & Crime Epics
+    [7,'B','b','m','Poran','2022'],
+    [7,'B','b','m','Khadaan','2024'],
+    [7,'B','b','m','Bohurupi','2024'],
+    [7,'B','b','m','Surongo','2023'],
+    [7,'B','b','s','Syndicate & Myself Allen Swapan','2022'],
+    [7,'B','b','s','Black Money','2024'],
+    [7,'B','i','m','Aynabaji','2016'],
+    [7,'B','i','s','Mandaar','2021'],
+    [7,'H','b','m','Baazigar','1993'],
+    [7,'H','b','m','Laal Rang','2016'],
+    [7,'H','b','s','Mirzapur','2018'],
+    [7,'H','i','m','A Wednesday','2008'],
+    [7,'H','i','mb','Gangs of Wasseypur','2012'],
+    [7,'E','b','m','Drive','2011'],
+    [7,'E','b','m','Reservoir Dogs','1992'],
+    [7,'E','b','m','The Departed','2006'],
+    [7,'E','b','m','Lord of War','2005'],
+    [7,'E','b','m','Lords of War','2027'],
+    [7,'E','b','m','The Only Living Pickpocket in New York','2026'],
+    [7,'E','b','m','Wild Horse Nine','2026'],
+    [7,'E','i','s','Breaking Bad','2008'],
+    [7,'E','i','m','Pulp Fiction','1994'],
+    [7,'E','i','m','Boogie Nights','1997'],
+    [7,'E','p','m','No Country for Old Men','2007'],
+    [7,'E','p','m','The Third Man','1949'],
+    [7,'E','p','m','The Irishman','2019'],
+    [7,'O','i','m','Nayakan','1987','Tamil'],
+    [7,'O','i','m','Vada Chennai','2018','Tamil'],
+    [7,'O','i','m','Oldboy','2003','Korean'],
+
+    // 8. Courtroom & Legal
+    [8,'B','i','s','Bodh','2022'],
+    [8,'E','b','s','Suits','2011'],
+    [8,'E','bi','m','The Social Network','2010'],
+    [8,'E','bi','s','WAR','2026'],
+    [8,'E','i','s','Better Call Saul','2015'],
+    [8,'E','ip','s','Succession','2018'],
+    [8,'E','ip','m','12 Angry Men','1957'],
+
+    // 9. Human Tragedy & Grief
+    [9,'B','b','m','Monpura','2009'],
+    [9,'B','b','m','Bela Seshe','2015'],
+    [9,'B','b','m','Praktan','2016'],
+    [9,'B','b','m','Sweater','2019'],
+    [9,'B','b','s','Subharambha',''],
+    [9,'B','i','m','Bishorjan','2017'],
+    [9,'B','i','m','Ajogyo','2024'],
+    [9,'B','i','s','Indubala Bhaater Hotel','2023'],
+    [9,'B','i','m','Doob: No Bed of Roses','2017'],
+    [9,'B','i','m','Apur Panchali','2013'],
+    [9,'B','i','m','Chitrangada: The Crowning Wish','2012'],
+    [9,'B','i','m','Antaheen','2009'],
+    [9,'B','i','m','The Japanese Wife','2010'],
+    [9,'B','p','m','Meghe Dhaka Tara','1960'],
+    [9,'B','p','m','Rehana Maryam Noor','2021'],
+    [9,'B','p','m','Asha Jaoar Majhe [Labour of Love]','2014'],
+    [9,'H','b','m','Anand','1971'],
+    [9,'H','i','m','Firaaq','2008'],
+    [9,'E','b','m','The Pursuit of Happyness','2006'],
+    [9,'E','b','m','Hachi: A Dog\'s Tale','2009'],
+    [9,'E','b','m','The Green Mile','1999'],
+    [9,'E','b','m','Stronger','2017'],
+    [9,'E','b','m','The Majestic','2001'],
+    [9,'E','bi','s','Chernobyl','2019'],
+    [9,'E','i','m','The Pianist','2002'],
+    [9,'E','i','m','Into the Wild','2007'],
+    [9,'E','i','m','Half Nelson','2006'],
+    [9,'E','i','m','Manchester by the Sea','2016'],
+    [9,'E','i','m','Gran Torino','2008'],
+    [9,'E','i','m','Wildlife','2018'],
+    [9,'E','i','m','Waves','2019'],
+    [9,'E','i','m','Last Man in Tower','2026'],
+    [9,'E','ip','m','All That Jazz','1979'],
+    [9,'E','p','mb','The Banshees of Inisherin','2022'],
+    [9,'E','p','m','Magnolia','1999'],
+    [9,'O','b','m','Kumbalangi Nights','2019','Malayalam'],
+    [9,'O','b','m','Life Is Beautiful','1997','Italian'],
+    [9,'O','b','m','Mucize','2015','Turkish'],
+    [9,'O','i','m','Grave of the Fireflies','1988','Japanese'],
+    [9,'O','i','m','Ponette','1996','French'],
+    [9,'O','p','m','Incendies','2010','French'],
+    [9,'O','p','m','To Live [Ikiru]','1952','Japanese'],
+
+    // 10. Classic Social Realism
+    [10,'B','bi','m','Pather Panchali','1955'],
+    [10,'B','bi','m','Aparajito','1956'],
+    [10,'B','bi','m','Apur Sansar','1959'],
+    [10,'B','bi','m','Galpo Holeo Satti','1966'],
+    [10,'B','bi','m','Saptapadi','1961'],
+    [10,'B','bi','m','Shonkhonil Karagar','1992'],
+    [10,'B','bi','m','Nondito Noroke','2006'],
+    [10,'B','i','m','Nayak: The Hero','1966'],
+    [10,'B','i','m','Aranyer Din Ratri [Days and Nights in the Forest]','1970'],
+    [10,'B','i','m','Interview','1971'],
+    [10,'B','p','m','Devi','1960'],
+    [10,'B','p','m','Charulata','1964'],
+    [10,'B','p','m','Teen Kanya','1961'],
+    [10,'B','p','m','Jalsaghar [The Music Room]','1958'],
+    [10,'B','p','m','Subarnarekha','1965'],
+    [10,'B','p','m','Komal Gandhar','1961'],
+    [10,'B','p','m','Surja Dighal Bari','1979'],
+    [10,'B','p','m','The Clay Bird [Matir Moina]','2002'],
+    [10,'H','i','m','Pyaasa','1957'],
+    [10,'H','i','m','Party','1984'],
+    [10,'E','bi','m','Citizen Kane','1941'],
+    [10,'O','p','s','Dekalog','1989','Polish'],
+    [10,'O','p','m','The Seventh Seal','1957','Swedish'],
+
+    // 11. Slapstick & Chaos Comedy
+    [11,'B','b','m','Sharey Chuattor','1953'],
+    [11,'B','b','m','Ogo Bodhu Shundori','1981'],
+    [11,'B','b','m','Daruchini Dwip','2007'],
+    [11,'B','b','m','Bhuto Purbo','2025'],
+    [11,'B','b','s','Bohemian Ghora','2023'],
+    [11,'B','b','s','Fyakra','2025'],
+    [11,'H','b','m','Hera Pheri','2000'],
+    [11,'H','b','m','Dhamaal Film Series','2007'],
+    [11,'H','b','m','Welcome','2007'],
+    [11,'H','b','m','Chup Chup Ke','2006'],
+    [11,'H','b','m','Golmaal Film Series','2006'],
+    [11,'H','b','m','Housefull Film Series',''],
+    [11,'H','b','m','Bhagam Bhag','2006'],
+    [11,'H','b','m','Garam Masala','2005'],
+    [11,'H','b','m','De Dana Dan','2009'],
+    [11,'H','b','m','All the Best: Fun Begins','2009'],
+    [11,'H','b','m','Bol Bachchan','2012'],
+    [11,'H','b','m','One Two Three','2008'],
+    [11,'H','b','m','Heyy Babyy','2007'],
+    [11,'H','b','m','Chandni Chowk to China','2009'],
+    [11,'H','b','m','No Problem','2010'],
+    [11,'H','b','m','Tees Maar Khan','2010'],
+    [11,'H','b','m','Go Goa Gone','2013'],
+    [11,'H','b','m','Entertainment','2014'],
+    [11,'H','i','m','Andaz Apna Apna','1994'],
+    [11,'H','i','m','Angoor','1982'],
+    [11,'H','i','m','Wild Wild Punjab','2024'],
+    [11,'E','b','m','The Mask','1994'],
+    [11,'E','b','m','Liar Liar','1997'],
+    [11,'E','b','m','Ace Ventura: Pet Detective','1994'],
+    [11,'E','b','m','Dumb and Dumber','1994'],
+    [11,'E','b','m','Bruce Almighty','2003'],
+    [11,'E','b','m','Ratatouille','2007'],
+    [11,'E','b','m','Who Am I?','1998'],
+    [11,'E','b','m','The F-It List','2020'],
+    [11,'E','i','m','Airplane!','1980'],
+    [11,'E','i','m','The Naked Gun','1988'],
+    [11,'E','i','m','Spaceballs','1987'],
+    [11,'E','i','m','Not Another Teen Movie','2001'],
+
+    // 12. Dark Satire & Absurdism
+    [12,'B','bi','m','Mahapurush','1965'],
+    [12,'B','bi','m','Television','2012'],
+    [12,'B','bi','m','Bhooter Bhabishyat','2012'],
+    [12,'B','i','m','Goynar Baksho','2013'],
+    [12,'B','i','m','Hemlock Society','2012'],
+    [12,'B','i','m','The Calcutta Files','2026'],
+    [12,'H','b','m','Phas Gaye Re Obama','2010'],
+    [12,'H','b','m','Malamaal Weekly','2006'],
+    [12,'H','i','m','Jaane Bhi Do Yaaro','1983'],
+    [12,'H','i','m','Kabul Express','2006'],
+    [12,'H','p','m','Om-Dar-B-Dar','1988'],
+    [12,'E','b','m','The Truman Show','1998'],
+    [12,'E','b','m','The Secret Life of Walter Mitty','2013'],
+    [12,'E','i','m','The Big Short','2015'],
+    [12,'E','i','m','One Battle After Another','2025'],
+    [12,'E','i','m','Man on the Moon','1999'],
+    [12,'E','i','m','Sausage Party','2016'],
+    [12,'E','i','s','Curb Your Enthusiasm','2000'],
+    [12,'E','i','m','Ali Wong: Hard Knock Wife','2018'],
+    [12,'O','bi','m','Parasite','2019','Korean'],
+    [12,'O','ip','m','Super Deluxe','2019','Tamil'],
+
+    // 13. Romance & Heritage
+    [13,'B','b','m','Parineeta',''],
+    [13,'B','b','m','Datta','1976'],
+    [13,'B','b','m','Dui Duari','2000'],
+    [13,'B','b','m','Krishnopokkho','2016'],
+    [13,'B','i','m','Chokher Bali','2003'],
+    [13,'B','i','m','Noukadubi','2010'],
+    [13,'B','i','m','Devdas','1979'],
+    [13,'B','i','s','Srikanto','2022'],
+    [13,'B','p','m','Rajlokhi O Srikanto','2019'],
+    [13,'H','b','m','Partner','2007'],
+    [13,'H','b','m','Mere Baap Pehle Aap','2008'],
+    [13,'H','b','m','The Lunchbox','2013'],
+    [13,'H','i','m','Dev.D','2009'],
+    [13,'E','b','m','Pretty Woman','1990'],
+    [13,'E','b','m','The Princess Diaries','2001'],
+    [13,'E','b','m','How to Lose a Guy in 10 Days','2003'],
+    [13,'E','b','m','27 Dresses','2008'],
+    [13,'E','b','m','Confessions of a Shopaholic','2009'],
+    [13,'E','i','m','La La Land','2016'],
+    [13,'E','i','m','Blue Valentine','2010'],
+    [13,'E','ip','m','Phantom Thread','2017'],
+    [13,'E','p','m','Eternal Sunshine of the Spotless Mind','2004'],
+
+    // 14. Sci-Fi & Time Paradox
+    [14,'B','b','m','Bony','2021'],
+    [14,'E','b','m','The Iron Giant','1999'],
+    [14,'E','b','m','Edge of Tomorrow','2014'],
+    [14,'E','b','m','Minority Report','2002'],
+    [14,'E','b','m','Source Code','2011'],
+    [14,'E','b','m','The Butterfly Effect','2004'],
+    [14,'E','b','m','Oblivion','2013'],
+    [14,'E','i','m','Looper','2012'],
+    [14,'E','i','m','Triangle','2009'],
+    [14,'E','i','m','Moon','2009'],
+    [14,'E','i','m','Caddo Lake','2024'],
+    [14,'E','ip','s','The OA','2016'],
+    [14,'E','ip','m','Blade Runner 2049','2017'],
+    [14,'E','p','m','Vanilla Sky','2001'],
+    [14,'E','p','m','Primer','2004'],
+    [14,'O','i','m','The Platform [El Hoyo]','2019','Spanish'],
+
+    // 15. Epic Historical & War
+    [15,'B','b','m','Hirak Rajar Deshe','1980'],
+    [15,'B','b','m','Aguner Poroshmoni','1994'],
+    [15,'B','b','m','Kajolrekha','2024'],
+    [15,'B','b','m','Haajar Bachhor Dhorey','2005'],
+    [15,'B','i','m','Guerrilla','2011'],
+    [15,'H','b','m','Sholay','1975'],
+    [15,'H','b','m','Hunkkaar: The Roar','2026'],
+    [15,'E','b','m','Gladiator','2000'],
+    [15,'E','b','m','The Lord of the Rings Trilogy','2001'],
+    [15,'E','b','m','Braveheart','1995'],
+    [15,'E','i','m','The Last Samurai','2003'],
+    [15,'E','i','m','Kingdom of Heaven [Director\'s Cut]','2005'],
+    [15,'E','i','m','The Uprising','2026'],
+    [15,'E','p','m','Barry Lyndon','1975'],
+    [15,'O','b','m','Mayabazar','1957','Telugu'],
+    [15,'O','p','m','Ran','1985','Japanese'],
+
+    // 16. Short Films
+    [16,'H','b','m','Taandav','2016'],
+    [16,'H','b','m','Teaspoon','2015'],
+    [16,'H','i','m','Kriti','2016'],
+    [16,'H','i','m','Dum Dum Dumroo','2018'],
+    [16,'H','p','m','Rogan Josh','2018'],
+    [16,'H','p','m','Mamta Tonic','2015']
   ];
 
   const RAW_MANGA = [
-    [1,'Doubt',''],[1,'Real Account',''],[1,'Battle in 5 Seconds After Meeting',''],[1,'Darwin\'s Game',''],
-    [1,'Purgatory Dead Roll',''],[1,'Alice in Borderland',''],[1,'As the Gods Will',''],[2,'Gamble Fish',''],
-    [2,'Kakegurui – Compulsive Gambler',''],[2,'Gambling Emperor Legend Zero',''],[2,'Kaiji: Ultimate Survivor',''],
-    [2,'Gin to Kin',''],[2,'Usogui',''],[2,'Akagi: The Genius Who Fell Into Darkness',''],[3,'Bloody Monday',''],
-    [3,'Ōsama-tachi no Viking',''],[3,'Trillion Game',''],[3,'Kurosagi',''],[4,'The Fable',''],[4,'Museum',''],
-    [4,'My Home Hero',''],[5,'Monster',''],[5,'20th Century Boys',''],[6,'Tokyo Ghoul',''],[6,'Parasyte',''],
-    [6,'Ajin: Demi-Human',''],[7,'Hengoku no Schwester',''],[7,'Vinland Saga',''],[7,'Berserk',''],[7,'Vagabond',''],
-    [8,'Girls\' Last Tour',''],[8,'Blood on the Tracks',''],[8,'Goodnight Punpun',''],[8,'Homunculus',''],[8,'No Longer Human','']
+    // 1. Survival & Death Game
+    [1,'Doubt',''],
+    [1,'Real Account',''],
+    [1,'Battle in 5 Seconds After Meeting',''],
+    [1,'Darwin\'s Game',''],
+    [1,'Purgatory Dead Roll',''],
+    [1,'Alice in Borderland',''],
+    [1,'As the Gods Will',''],
+
+    // 2. Psychological Gambling
+    [2,'Gamble Fish',''],
+    [2,'Kakegurui – Compulsive Gambler',''],
+    [2,'Gambling Emperor Legend Zero',''],
+    [2,'Kaiji: Ultimate Survivor',''],
+    [2,'Gin to Kin',''],
+    [2,'Usogui',''],
+    [2,'Akagi: The Genius Who Fell Into Darkness',''],
+
+    // 3. Cyber-Crime & Fraud
+    [3,'Bloody Monday',''],
+    [3,'Ōsama-tachi no Viking',''],
+    [3,'Trillion Game',''],
+    [3,'Kurosagi',''],
+
+    // 4. Underworld Noir
+    [4,'The Fable',''],
+    [4,'Museum',''],
+    [4,'My Home Hero',''],
+
+    // 5. Sci-Fi Mystery
+    [5,'Monster',''],
+    [5,'20th Century Boys',''],
+
+    // 6. Supernatural Tactical Action
+    [6,'Tokyo Ghoul',''],
+    [6,'Parasyte',''],
+    [6,'Ajin: Demi-Human',''],
+
+    // 7. Historical Drama & Dark Fantasy
+    [7,'Hengoku no Schwester',''],
+    [7,'Vinland Saga',''],
+    [7,'Berserk',''],
+    [7,'Vagabond',''],
+
+    // 8. Psychological Deconstruction
+    [8,'Girls\' Last Tour',''],
+    [8,'Blood on the Tracks',''],
+    [8,'Goodnight Punpun',''],
+    [8,'Homunculus',''],
+    [8,'No Longer Human','']
   ];
 
   const RAW_ANIME = [
-    [1,'b','s','Tonari no Seki-kun: The Master of Killing Time',''],[1,'b','s','Love is Like a Cocktail',''],
-    [1,'b','s','Joshi Kausei',''],[1,'b','s','My Sweet Tyrant',''],[1,'b','s','Tsuredure Children',''],
-    [1,'b','s','Suddenly, Egyptian Gods',''],[1,'i','s','Jingai-san no Yome',''],[1,'i','s','Ao-chan Can’t Study',''],
-    [1,'i','s','Isekai Quartet',''],[1,'i','s','Ghost Stories (Official English Dub)',''],[1,'i','s','Azumanga Daioh',''],
-    [1,'i','s','The Disastrous Life of Saiki K.',''],[1,'ip','s','Nichijou',''],[1,'i','s','Aho-Girl',''],
-    [1,'p','s','My Deer Friend Nokotan',''],[1,'p','s','Bobobo-bo Bo-bobo',''],[1,'p','s','Pop Team Epic',''],
-    [2,'b','s','Tomo-chan Is a Girl!',''],[2,'b','s','Tonikaku Kawaii (Fly Me to the Moon)',''],[2,'b','s','Horimiya',''],
-    [2,'b','s','Komi Can\'t Communicate',''],[2,'b','s','My Senpai is Annoying',''],[2,'i','s','Kaguya-sama: Love is War',''],
-    [2,'i','s','Science Fell in Love, So I Tried to Prove It',''],[2,'i','s','Kiss Him, Not Me',''],[2,'i','s','Fruits Basket',''],
-    [2,'i','s','Toradora!',''],[2,'p','s','Scum\'s Wish',''],[3,'b','s','Spy x Family',''],[3,'b','s','Tanaka-kun is Always Listless',''],
-    [3,'i','s','Hinamatsuri',''],[3,'i','s','Kakushigoto',''],[3,'i','s','Uramichi-Oniisan',''],[3,'i','s','Great Teacher Onizuka (GTO)',''],
-    [3,'ip','s','Asobi Asobase',''],[3,'ip','s','Grand Blue Dreaming',''],[3,'p','s','Golden Boy',''],[4,'b','m','Weathering With You','2019'],
-    [4,'b','m','Your Name','2016'],[4,'b','m','The Girl Who Leapt Through Time','2006'],[4,'b','m','A Silent Voice','2016'],
-    [4,'b','m','I Want to Eat Your Pancreas','2018'],[4,'bi','m','Wolf Children','2012'],[4,'bi','s','Angel Beats!','2010'],
-    [4,'i','s','Anohana: The Flower We Saw That Day','2011'],[4,'i','s','Your Lie in April','2014'],[4,'i','s','Violet Evergarden','2018'],
-    [4,'i','m','The Garden of Words','2013'],[4,'i','m','5 Centimeters Per Second','2007'],[4,'i','m','Maquia: When the Promised Flower Blooms','2018'],
-    [4,'i','m','Look Back','2024'],[4,'i','m','Only Yesterday','1991'],[4,'i','s','Nana','2006'],[4,'ip','s','Clannad & Clannad: After Story',''],
-    [4,'p','s','Welcome to the NHK','2006'],[4,'p','s','Journal with Witch (Ikoku Nikki)',''],[4,'p','s','March Comes in Like a Lion','2016'],
-    [4,'p','m','Grave of the Fireflies','1988'],[5,'b','m','My Neighbor Totoro','1988'],[5,'b','s','Laid-Back Camp','2018'],
-    [5,'i','s','Natsume\'s Book of Friends','2008'],[5,'i','s','Fairies Album',''],[5,'ip','s','The Beast Player Erin','2009'],
-    [5,'p','s','Mushishi Series','2005'],[6,'b','s','Fullmetal Alchemist & FMAB',''],[6,'b','s','Naruto','2002'],
-    [6,'b','s','Black Clover','2017'],[6,'b','s','Mashle: Magic and Muscles','2023'],[6,'b','s','One-Punch Man','2015'],
-    [6,'b','s','Assassination Classroom','2015'],[6,'bi','s','Fire Force','2019'],[6,'bi','s','Nura: Rise of the Yokai Clan','2010'],
-    [6,'i','s','To Be Hero X','2025'],[6,'i','s','Jujutsu Kaisen','2020'],[6,'i','s','Chainsaw Man','2022'],
-    [6,'i','s','Dandadan','2024'],[6,'i','s','Sakamoto Days','2025'],[6,'i','s','Noragami','2014'],
-    [6,'i','s','Bungou Stray Dogs','2016'],[6,'i','s','Yu Yu Hakusho','1992'],[6,'i','s','K Project','2012'],
-    [6,'i','s','Tokyo Ravens','2013'],[6,'i','s','Hitori no Shita: The Outcast','2016'],[6,'i','s','Mob Psycho 100','2016'],
-    [6,'p','s','Hunter x Hunter','2011'],[6,'p','s','JoJo\'s Bizarre Adventure (JJBA)','2012'],[7,'b','m','Lupin III: The Castle of Cagliostro','1979'],
-    [7,'b','s','Great Pretender','2020'],[7,'bi','s','The Fable','2024'],[7,'bi','s','Trigun','1998'],
-    [7,'i','m','Redline','2009'],[7,'i','s','Jormungand','2012'],[7,'i','s','Black Lagoon','2006'],
-    [7,'i','s','Akudama Drive','2020'],[7,'i','s','Durarara!!','2010'],[7,'i','s','91 Days','2016'],
-    [7,'p','s','Baccano!','2007'],[7,'p','s','Phantom: Requiem for the Phantom','2009'],[8,'b','s','Rurouni Kenshin',''],
-    [8,'b','s','Dororo','2019'],[8,'i','s','Samurai Champloo','2004'],[8,'i','s','Blue Eye Samurai','2023'],
-    [8,'i','s','The Daily Life of the Immortal King','2020'],[8,'i','s','Fog Hill of Five Elements','2020'],
-    [8,'i','s','Blades of the Guardian','2023'],[8,'ip','s','Grandmaster of Demonic Cultivation','2018'],
-    [8,'ip','s','Heaven Official’s Blessing','2020'],[8,'i','m','Sword of the Stranger','2007'],[8,'p','s','Tree in the Sun','2000'],
-    [8,'p','s','Shigurui: Death Frenzy','2007'],[9,'b','m','Ponyo','2008'],[9,'b','m','Castle in the Sky','1986'],
-    [9,'b','m','Howl’s Moving Castle','2004'],[9,'b','m','Spirited Away','2001'],[9,'b','m','The Boy and the Beast','2015'],
-    [9,'b','m','The Legend of Hei','2019'],[9,'bi','s','Delicious in Dungeon','2024'],[9,'i','s','Grimgar: Ashes and Illusions','2016'],
-    [9,'bi','s','One Piece','1999'],[9,'i','s','Treasure Island','1978'],[9,'i','s','Frieren: Beyond Journey\'s End','2023'],
-    [9,'i','m','Princess Mononoke','1997'],[9,'i','m','Nausicaä of the Valley of the Wind','1984'],[9,'i','s','Moribito: Guardian of the Spirit','2007'],
-    [9,'i','s','Ranking of Kings','2021'],[9,'p','m','The Tale of the Princess Kaguya','2013'],[9,'p','s','The Twelve Kingdoms','2002'],
-    [9,'p','s','Lord of the Mysteries','2025'],[10,'b','s','Erased','2016'],[10,'b','s','Death Note','2006'],
-    [10,'b','s','The Promised Neverland','2019'],[10,'bi','s','Terror in Resonance','2014'],[10,'bi','s','Talentless Nana','2020'],
-    [10,'bi','s','Classroom of the Elite','2017'],[10,'bi','s','Tomodachi Game','2022'],[10,'bi','s','No Game, No Life','2014'],
-    [10,'bi','s','Eden of the East','2009'],[10,'i','s','Danganronpa: The Animation','2013'],[10,'i','s','Summer Time Rendering','2022'],
-    [10,'i','s','Kakegurui','2017'],[10,'i','s','Moriarty the Patriot','2020'],[10,'i','s','Link Click','2021'],
-    [10,'i','s','Uncharted Walker','2018'],[10,'i','s','One Outs','2008'],[10,'i','s','Kaiji: Ultimate Survivor','2007'],
-    [10,'ip','s','Liar Game',''],[10,'i','s','ID: INVADED','2020'],[10,'i','s','Death Parade','2015'],
-    [10,'i','s','Odd Taxi','2021'],[10,'p','s','The Perfect Insider','2015'],[10,'ip','s','Psycho-Pass','2012'],
-    [10,'p','s','Pluto','2023'],[10,'p','s','Monster','2004'],[11,'b','s','Another','2012'],
-    [11,'b','s','The Future Diary','2011'],[11,'b','s','Darwin\'s Game','2020'],[11,'bi','s','Deadman Wonderland','2011'],
-    [11,'bi','s','Btooom!','2012'],[11,'b','s','Akame ga Kill!','2014'],[11,'i','s','Ragna Crimson','2023'],
-    [11,'i','s','Hell\'s Paradise','2023'],[11,'i','s','Elfen Lied','2004'],[11,'i','s','Re:ZERO - Starting Life in Another World','2016'],
-    [11,'i','s','Parasyte: The Maxim','2014'],[11,'i','s','Attack on Titan','2013'],[11,'i','s','Hellsing Ultimate','2006'],
-    [11,'i','s','Garo: The Carved Seal of Flames','2014'],[11,'i','s','Drifters','2016'],[11,'i','m','Vampire Hunter D: Bloodlust','2000'],
-    [11,'ip','s','Dorohedoro','2020'],[11,'ip','s','Shiki','2010'],[11,'ip','s','Berserk (1997)','1997'],
-    [11,'p','s','Made in Abyss','2017'],[11,'p','s','Rainbow: Nisha Rokubou no Shichinin','2010'],[11,'p','s','Devilman: Crybaby','2018'],
-    [11,'p','s','Now and Then, Here and There','1999'],[11,'p','s','Takopi\'s Original Sin',''],[12,'b','m','Summer Wars','2009'],
-    [12,'b','m','Belle','2021'],[12,'b','s','Dr. Stone','2019'],[12,'i','s','Vivy: Fluorite Eye\'s Song','2021'],
-    [12,'i','s','Inuyashiki: Last Hero','2017'],[12,'i','s','Steins;Gate','2011'],[12,'i','s','86 (Eighty-Six)','2021'],
-    [12,'i','m','Akira','1988'],[12,'i','s','Cyberpunk: Edgerunners','2022'],[12,'p','m','Ghost in the Shell','1995'],
-    [12,'p','s','Land of the Lustrous','2017'],[12,'p','s','Casshern Sins','2008'],[12,'p','s','Heavenly Delusion','2023'],
-    [12,'p','s','From the New World (Shinsekai Yori)','2012'],[12,'p','s','Dead Dead Demon\'s De De De De Destruction','2024'],
-    [12,'p','s','Texhnolyze','2003'],[13,'b','s','Gurren Lagann','2007'],[13,'b','s','Code Geass: Lelouch of the Rebellion','2006'],
-    [13,'i','s','Darling in the FranXX','2018'],[13,'i','s','The Big O','1999'],[13,'i','s','Cowboy Bebop','1998'],
-    [13,'i','m','Rebuild of Evangelion Movies','2007'],[13,'i','s','Mobile Suit Gundam: Iron-Blooded Orphans','2015'],
-    [13,'p','s','Neon Genesis Evangelion + The End of Evangelion','1995'],[13,'p','s','Legend of Black Heaven','1999'],
-    [13,'p','s','Galaxy Express 999','1978'],[13,'p','s','Legend of the Galactic Heroes','1988'],
-    [14,'i','m','The Disappearance of Haruhi Suzumiya','2010'],[14,'i','m','Night Is Short, Walk on Girl','2017'],
-    [14,'i','m','Paprika','2006'],[14,'i','m','Millennium Actress','2001'],[14,'i','m','Tokyo Godfathers','2003'],
-    [14,'ip','m','Perfect Blue','1997'],[14,'p','s','Mononoke','2007'],[14,'p','s','The Tatami Galaxy','2010'],
-    [14,'p','m','Mind Game','2004'],[14,'p','m','The Boy and the Heron','2023'],[14,'p','s','Paranoia Agent','2004'],
-    [14,'p','s','Monogatari Series','2009'],[14,'p','s','Sonny Boy','2021'],[14,'p','s','False Memory','2026'],
-    [14,'p','s','Serial Experiments Lain','1998'],[15,'b','s','The Apothecary Diaries','2023'],
-    [15,'i','s','Raven of the Inner Palace','2022'],[15,'i','s','Alderamin on the Sky','2016'],[15,'i','s','Kingdom','2012'],
-    [15,'i','s','ACCA: 13-Territory Inspection Department','2017'],[15,'i','m','The Wind Rises','2013'],
-    [15,'i','s','Vinland Saga (Season 1)','2019'],[15,'p','s','Vinland Saga (Season 2)','2023'],
-    [15,'p','s','House of Five Leaves','2010'],[15,'p','s','Orb: On the Movements of the Earth','2024'],
-    [15,'p','s','Gankutsuou: The Count of Monte Cristo','2004'],[15,'p','s','Showa Genroku Rakugo Shinju','2016'],
-    [16,'b','s','Haikyu!!','2014'],[16,'b','s','Food Wars!','2015'],[16,'bi','s','The King\'s Avatar','2017'],
-    [16,'bi','s','Bocchi the Rock!','2022'],[16,'i','s','Megalo Box','2018'],[16,'p','s','Ping Pong the Animation','2014']
+    // 1. Gag Comedy
+    [1,'b','s','Tonari no Seki-kun: The Master of Killing Time',''],
+    [1,'b','s','Love is Like a Cocktail',''],
+    [1,'b','s','Joshi Kausei',''],
+    [1,'b','s','My Sweet Tyrant',''],
+    [1,'b','s','Tsuredure Children',''],
+    [1,'b','s','Suddenly, Egyptian Gods',''],
+    [1,'i','s','Jingai-san no Yome',''],
+    [1,'i','s','Ao-chan Can’t Study',''],
+    [1,'i','s','Isekai Quartet',''],
+    [1,'i','s','Ghost Stories (Official English Dub)',''],
+    [1,'i','s','Azumanga Daioh',''],
+    [1,'i','s','The Disastrous Life of Saiki K.',''],
+    [1,'ip','s','Nichijou',''],
+    [1,'i','s','Aho-Girl',''],
+    [1,'p','s','My Deer Friend Nokotan',''],
+    [1,'p','s','Bobobo-bo Bo-bobo',''],
+    [1,'p','s','Pop Team Epic',''],
+
+    // 2. High School Romance
+    [2,'b','s','Tomo-chan Is a Girl!',''],
+    [2,'b','s','Tonikaku Kawaii (Fly Me to the Moon)',''],
+    [2,'b','s','Horimiya',''],
+    [2,'b','s','Komi Can\'t Communicate',''],
+    [2,'b','s','My Senpai is Annoying',''],
+    [2,'i','s','Kaguya-sama: Love is War',''],
+    [2,'i','s','Science Fell in Love, So I Tried to Prove It',''],
+    [2,'i','s','Kiss Him, Not Me',''],
+    [2,'i','s','Fruits Basket',''],
+    [2,'i','s','Toradora!',''],
+    [2,'p','s','Scum\'s Wish',''],
+
+    // 3. Workplace & Slapstick
+    [3,'b','s','Spy x Family',''],
+    [3,'b','s','Tanaka-kun is Always Listless',''],
+    [3,'i','s','Hinamatsuri',''],
+    [3,'i','s','Kakushigoto',''],
+    [3,'i','s','Uramichi-Oniisan',''],
+    [3,'i','s','Great Teacher Onizuka (GTO)',''],
+    [3,'ip','s','Asobi Asobase',''],
+    [3,'ip','s','Grand Blue Dreaming',''],
+    [3,'p','s','Golden Boy',''],
+
+    // 4. Emotional Melodrama
+    [4,'b','m','Weathering With You','2019'],
+    [4,'b','m','Your Name','2016'],
+    [4,'b','m','The Girl Who Leapt Through Time','2006'],
+    [4,'b','m','A Silent Voice','2016'],
+    [4,'b','m','I Want to Eat Your Pancreas','2018'],
+    [4,'bi','m','Wolf Children','2012'],
+    [4,'bi','s','Angel Beats!','2010'],
+    [4,'i','s','Anohana: The Flower We Saw That Day','2011'],
+    [4,'i','s','Your Lie in April','2014'],
+    [4,'i','s','Violet Evergarden','2018'],
+    [4,'i','m','The Garden of Words','2013'],
+    [4,'i','m','5 Centimeters Per Second','2007'],
+    [4,'i','m','Maquia: When the Promised Flower Blooms','2018'],
+    [4,'i','m','Look Back','2024'],
+    [4,'i','m','Only Yesterday','1991'],
+    [4,'i','s','Nana','2006'],
+    [4,'ip','s','Clannad & Clannad: After Story',''],
+    [4,'p','s','Welcome to the NHK','2006'],
+    [4,'p','s','Journal with Witch (Ikoku Nikki)',''],
+    [4,'p','s','March Comes in Like a Lion','2016'],
+    [4,'p','m','Grave of the Fireflies','1988'],
+
+    // 5. Iyashikei
+    [5,'b','m','My Neighbor Totoro','1988'],
+    [5,'b','s','Laid-Back Camp','2018'],
+    [5,'i','s','Natsume\'s Book of Friends','2008'],
+    [5,'i','s','Fairies Album',''],
+    [5,'ip','s','The Beast Player Erin','2009'],
+    [5,'p','s','Mushishi Series','2005'],
+
+    // 6. High-Octane Action
+    [6,'b','s','Fullmetal Alchemist & FMAB',''],
+    [6,'b','s','Naruto','2002'],
+    [6,'b','s','Black Clover','2017'],
+    [6,'b','s','Mashle: Magic and Muscles','2023'],
+    [6,'b','s','One-Punch Man','2015'],
+    [6,'b','s','Assassination Classroom','2015'],
+    [6,'bi','s','Fire Force','2019'],
+    [6,'bi','s','Nura: Rise of the Yokai Clan','2010'],
+    [6,'i','s','To Be Hero X','2025'],
+    [6,'i','s','Jujutsu Kaisen','2020'],
+    [6,'i','s','Chainsaw Man','2022'],
+    [6,'i','s','Dandadan','2024'],
+    [6,'i','s','Sakamoto Days','2025'],
+    [6,'i','s','Noragami','2014'],
+    [6,'i','s','Bungou Stray Dogs','2016'],
+    [6,'i','s','Yu Yu Hakusho','1992'],
+    [6,'i','s','K Project','2012'],
+    [6,'i','s','Tokyo Ravens','2013'],
+    [6,'i','s','Hitori no Shita: The Outcast','2016'],
+    [6,'i','s','Mob Psycho 100','2016'],
+    [6,'p','s','Hunter x Hunter','2011'],
+    [6,'p','s','JoJo\'s Bizarre Adventure (JJBA)','2012'],
+
+    // 7. Crime & Gunslingers
+    [7,'b','m','Lupin III: The Castle of Cagliostro','1979'],
+    [7,'b','s','Great Pretender','2020'],
+    [7,'bi','s','The Fable','2024'],
+    [7,'bi','s','Trigun','1998'],
+    [7,'i','m','Redline','2009'],
+    [7,'i','s','Jormungand','2012'],
+    [7,'i','s','Black Lagoon','2006'],
+    [7,'i','s','Akudama Drive','2020'],
+    [7,'i','s','Durarara!!','2010'],
+    [7,'i','s','91 Days','2016'],
+    [7,'p','s','Baccano!','2007'],
+    [7,'p','s','Phantom: Requiem for the Phantom','2009'],
+
+    // 8. Chanbara & Historical
+    [8,'b','s','Rurouni Kenshin',''],
+    [8,'b','s','Dororo','2019'],
+    [8,'i','s','Samurai Champloo','2004'],
+    [8,'i','s','Blue Eye Samurai','2023'],
+    [8,'i','s','The Daily Life of the Immortal King','2020'],
+    [8,'i','s','Fog Hill of Five Elements','2020'],
+    [8,'i','s','Blades of the Guardian','2023'],
+    [8,'ip','s','Grandmaster of Demonic Cultivation','2018'],
+    [8,'ip','s','Heaven Official’s Blessing','2020'],
+    [8,'i','m','Sword of the Stranger','2007'],
+    [8,'p','s','Tree in the Sun','2000'],
+    [8,'p','s','Shigurui: Death Frenzy','2007'],
+
+    // 9. Classical Fantasy
+    [9,'b','m','Ponyo','2008'],
+    [9,'b','m','Castle in the Sky','1986'],
+    [9,'b','m','Howl’s Moving Castle','2004'],
+    [9,'b','m','Spirited Away','2001'],
+    [9,'b','m','The Boy and the Beast','2015'],
+    [9,'b','m','The Legend of Hei','2019'],
+    [9,'bi','s','Delicious in Dungeon','2024'],
+    [9,'i','s','Grimgar: Ashes and Illusions','2016'],
+    [9,'bi','s','One Piece','1999'],
+    [9,'i','s','Treasure Island','1978'],
+    [9,'i','s','Frieren: Beyond Journey\'s End','2023'],
+    [9,'i','m','Princess Mononoke','1997'],
+    [9,'i','m','Nausicaä of the Valley of the Wind','1984'],
+    [9,'i','s','Moribito: Guardian of the Spirit','2007'],
+    [9,'i','s','Ranking of Kings','2021'],
+    [9,'p','m','The Tale of the Princess Kaguya','2013'],
+    [9,'p','s','The Twelve Kingdoms','2002'],
+    [9,'p','s','Lord of the Mysteries','2025'],
+
+    // 10. Psychological Thriller
+    [10,'b','s','Erased','2016'],
+    [10,'b','s','Death Note','2006'],
+    [10,'b','s','The Promised Neverland','2019'],
+    [10,'bi','s','Terror in Resonance','2014'],
+    [10,'bi','s','Talentless Nana','2020'],
+    [10,'bi','s','Classroom of the Elite','2017'],
+    [10,'bi','s','Tomodachi Game','2022'],
+    [10,'bi','s','No Game, No Life','2014'],
+    [10,'bi','s','Eden of the East','2009'],
+    [10,'i','s','Danganronpa: The Animation','2013'],
+    [10,'i','s','Summer Time Rendering','2022'],
+    [10,'i','s','Kakegurui','2017'],
+    [10,'i','s','Moriarty the Patriot','2020'],
+    [10,'i','s','Link Click','2021'],
+    [10,'i','s','Uncharted Walker','2018'],
+    [10,'i','s','One Outs','2008'],
+    [10,'i','s','Kaiji: Ultimate Survivor','2007'],
+    [10,'ip','s','Liar Game',''],
+    [10,'i','s','ID: INVADED','2020'],
+    [10,'i','s','Death Parade','2015'],
+    [10,'i','s','Odd Taxi','2021'],
+    [10,'p','s','The Perfect Insider','2015'],
+    [10,'ip','s','Psycho-Pass','2012'],
+    [10,'p','s','Pluto','2023'],
+    [10,'p','s','Monster','2004'],
+
+    // 11. Dark Fantasy & Horror
+    [11,'b','s','Another','2012'],
+    [11,'b','s','The Future Diary','2011'],
+    [11,'b','s','Darwin\'s Game','2020'],
+    [11,'bi','s','Deadman Wonderland','2011'],
+    [11,'bi','s','Btooom!','2012'],
+    [11,'b','s','Akame ga Kill!','2014'],
+    [11,'i','s','Ragna Crimson','2023'],
+    [11,'i','s','Hell\'s Paradise','2023'],
+    [11,'i','s','Elfen Lied','2004'],
+    [11,'i','s','Re:ZERO - Starting Life in Another World','2016'],
+    [11,'i','s','Parasyte: The Maxim','2014'],
+    [11,'i','s','Attack on Titan','2013'],
+    [11,'i','s','Hellsing Ultimate','2006'],
+    [11,'i','s','Garo: The Carved Seal of Flames','2014'],
+    [11,'i','s','Drifters','2016'],
+    [11,'i','m','Vampire Hunter D: Bloodlust','2000'],
+    [11,'ip','s','Dorohedoro','2020'],
+    [11,'ip','s','Shiki','2010'],
+    [11,'ip','s','Berserk (1997)','1997'],
+    [11,'p','s','Made in Abyss','2017'],
+    [11,'p','s','Rainbow: Nisha Rokubou no Shichinin','2010'],
+    [11,'p','s','Devilman: Crybaby','2018'],
+    [11,'p','s','Now and Then, Here and There','1999'],
+    [11,'p','s','Takopi\'s Original Sin',''],
+
+    // 12. Cyberpunk & Sci-Fi
+    [12,'b','m','Summer Wars','2009'],
+    [12,'b','m','Belle','2021'],
+    [12,'b','s','Dr. Stone','2019'],
+    [12,'i','s','Vivy: Fluorite Eye\'s Song','2021'],
+    [12,'i','s','Inuyashiki: Last Hero','2017'],
+    [12,'i','s','Steins;Gate','2011'],
+    [12,'i','s','86 (Eighty-Six)','2021'],
+    [12,'i','m','Akira','1988'],
+    [12,'i','s','Cyberpunk: Edgerunners','2022'],
+    [12,'p','m','Ghost in the Shell','1995'],
+    [12,'p','s','Land of the Lustrous','2017'],
+    [12,'p','s','Casshern Sins','2008'],
+    [12,'p','s','Heavenly Delusion','2023'],
+    [12,'p','s','From the New World (Shinsekai Yori)','2012'],
+    [12,'p','s','Dead Dead Demon\'s De De De De Destruction','2024'],
+    [12,'p','s','Texhnolyze','2003'],
+
+    // 13. Philosophical Mecha & Space
+    [13,'b','s','Gurren Lagann','2007'],
+    [13,'b','s','Code Geass: Lelouch of the Rebellion','2006'],
+    [13,'i','s','Darling in the FranXX','2018'],
+    [13,'i','s','The Big O','1999'],
+    [13,'i','s','Cowboy Bebop','1998'],
+    [13,'i','m','Rebuild of Evangelion Movies','2007'],
+    [13,'i','s','Mobile Suit Gundam: Iron-Blooded Orphans','2015'],
+    [13,'p','s','Neon Genesis Evangelion + The End of Evangelion','1995'],
+    [13,'p','s','Legend of Black Heaven','1999'],
+    [13,'p','s','Galaxy Express 999','1978'],
+    [13,'p','s','Legend of the Galactic Heroes','1988'],
+
+    // 14. Surreal & Avant-Garde
+    [14,'i','m','The Disappearance of Haruhi Suzumiya','2010'],
+    [14,'i','m','Night Is Short, Walk on Girl','2017'],
+    [14,'i','m','Paprika','2006'],
+    [14,'i','m','Millennium Actress','2001'],
+    [14,'i','m','Tokyo Godfathers','2003'],
+    [14,'ip','m','Perfect Blue','1997'],
+    [14,'p','s','Mononoke','2007'],
+    [14,'p','s','The Tatami Galaxy','2010'],
+    [14,'p','m','Mind Game','2004'],
+    [14,'p','m','The Boy and the Heron','2023'],
+    [14,'p','s','Paranoia Agent','2004'],
+    [14,'p','s','Monogatari Series','2009'],
+    [14,'p','s','Sonny Boy','2021'],
+    [14,'p','s','False Memory','2026'],
+    [14,'p','s','Serial Experiments Lain','1998'],
+
+    // 15. Intellectual History
+    [15,'b','s','The Apothecary Diaries','2023'],
+    [15,'i','s','Raven of the Inner Palace','2022'],
+    [15,'i','s','Alderamin on the Sky','2016'],
+    [15,'i','s','Kingdom','2012'],
+    [15,'i','s','ACCA: 13-Territory Inspection Department','2017'],
+    [15,'i','m','The Wind Rises','2013'],
+    [15,'i','s','Vinland Saga (Season 1)','2019'],
+    [15,'p','s','Vinland Saga (Season 2)','2023'],
+    [15,'p','s','House of Five Leaves','2010'],
+    [15,'p','s','Orb: On the Movements of the Earth','2024'],
+    [15,'p','s','Gankutsuou: The Count of Monte Cristo','2004'],
+    [15,'p','s','Showa Genroku Rakugo Shinju','2016'],
+
+    // 16. Sports & Competition
+    [16,'b','s','Haikyu!!','2014'],
+    [16,'b','s','Food Wars!','2015'],
+    [16,'bi','s','The King\'s Avatar','2017'],
+    [16,'bi','s','Bocchi the Rock!','2022'],
+    [16,'i','s','Megalo Box','2018'],
+    [16,'p','s','Ping Pong the Animation','2014']
   ];
 
   function seedMasterList() {
@@ -696,7 +1223,7 @@
     return list;
   }
 
-  const STORAGE_KEY = 'wl-master-v3';
+  const STORAGE_KEY = 'wl-master-v4';
   let items = null;
 
   try {
@@ -714,9 +1241,39 @@
     try { localStorage.setItem(STORAGE_KEY, JSON.stringify(items)); } catch(e){}
   }
 
-  // Active Category Tab State
-  let activeCategory = 'all';
+  function commit() {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+    } catch (e) {}
+    render();
+  }
 
+  const state = {
+    tab: 'all',
+    q: '',
+    sort: 'curated',
+    status: 'all',
+    genre: 'all',
+    lang: 'all',
+    level: 'all',
+    theme: 'cinema'
+  };
+
+  try {
+    const savedTheme = localStorage.getItem('wl-theme');
+    if (savedTheme) state.theme = savedTheme;
+  } catch (e) {}
+
+  const TYPE_NAMES = { movie: 'Movie', anime: 'Anime', manga: 'Manga', tv: 'TV Series' };
+  const LANG_NAMES = { B: 'Bangla', H: 'Hindi', E: 'English', O: 'Other' };
+  const LEVEL_NAMES = { b: 'Beginner', bi: 'Beginner to Intermediate', i: 'Intermediate', ip: 'Intermediate to Pro', p: 'Pro' };
+  const LANG_RANK = { B: 0, H: 1, E: 2, O: 3 };
+  const LEVEL_RANK = { b: 0, bi: 0.5, i: 1, ip: 1.5, p: 2 };
+
+  const appEl = document.getElementById('app');
+  const themeToggle = document.getElementById('themeToggle');
+  const themeLabel = document.getElementById('themeLabel');
+  const resetBtn = document.getElementById('resetBtn');
   const tabContainer = document.getElementById('tabContainer');
   const searchInput = document.getElementById('searchInput');
   const sortSelect = document.getElementById('sortSelect');
@@ -727,296 +1284,341 @@
   const countDisplay = document.getElementById('countDisplay');
   const contentGroups = document.getElementById('contentGroups');
   const emptyMessage = document.getElementById('emptyMessage');
-  const themeToggle = document.getElementById('themeToggle');
-  const themeLabel = document.getElementById('themeLabel');
-  const app = document.getElementById('app');
-  const resetBtn = document.getElementById('resetBtn');
   const addForm = document.getElementById('addForm');
+  const newTitle = document.getElementById('newTitle');
+  const newYear = document.getElementById('newYear');
+  const newType = document.getElementById('newType');
 
-  function commit() {
-    try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
-    } catch (e) {}
-    render();
+  function updateThemeUI() {
+    appEl.setAttribute('data-theme', state.theme);
+    themeLabel.textContent = state.theme === 'light' ? 'Light Mode' : 'Cinema Mode';
   }
 
-  function getGenreData(cat, gNum) {
-    let table = MOVIE_GENRES;
-    if (cat === 'anime') table = ANIME_GENRES;
-    if (cat === 'manga') table = MANGA_GENRES;
-    const found = table.find(x => x[0] === Number(gNum));
-    return found ? { id: found[0], title: found[1], desc: found[2] } : { id: gNum, title: 'Genre ' + gNum, desc: '' };
-  }
+  themeToggle.addEventListener('click', () => {
+    state.theme = state.theme === 'light' ? 'cinema' : 'light';
+    try { localStorage.setItem('wl-theme', state.theme); } catch (e) {}
+    updateThemeUI();
+  });
+  updateThemeUI();
+
+  resetBtn.addEventListener('click', () => {
+    if (confirm('Reset your entire list back to the verified master list? Custom entries will be restored to defaults.')) {
+      items = seedMasterList();
+      state.genre = 'all';
+      commit();
+    }
+  });
 
   function populateGenreOptions() {
-    genreSelect.innerHTML = '<option value="all">Any genre</option>';
-    let genres = [];
-    if (activeCategory === 'movie') genres = MOVIE_GENRES;
-    else if (activeCategory === 'anime') genres = ANIME_GENRES;
-    else if (activeCategory === 'manga') genres = MANGA_GENRES;
-    else {
-      genres = MOVIE_GENRES; // default fallback for 'all'
-    }
-    genres.forEach(g => {
+    const curVal = state.genre;
+    genreSelect.innerHTML = '<option value="all">All genres / categories</option>';
+    let activeGenreList = MOVIE_GENRES;
+    if (state.tab === 'anime') activeGenreList = ANIME_GENRES;
+    else if (state.tab === 'manga') activeGenreList = MANGA_GENRES;
+
+    activeGenreList.forEach(([num, title]) => {
       const opt = document.createElement('option');
-      opt.value = g[0];
-      opt.textContent = g[1];
+      opt.value = String(num);
+      opt.textContent = title;
       genreSelect.appendChild(opt);
     });
+
+    if (activeGenreList.some(([n]) => String(n) === curVal)) {
+      genreSelect.value = curVal;
+    } else {
+      state.genre = 'all';
+      genreSelect.value = 'all';
+    }
+  }
+
+  searchInput.addEventListener('input', e => { state.q = e.target.value; render(); });
+  sortSelect.addEventListener('change', e => { state.sort = e.target.value; render(); });
+  statusSelect.addEventListener('change', e => { state.status = e.target.value; render(); });
+  genreSelect.addEventListener('change', e => { state.genre = e.target.value; render(); });
+  langSelect.addEventListener('change', e => { state.lang = e.target.value; render(); });
+  levelSelect.addEventListener('change', e => { state.level = e.target.value; render(); });
+
+  addForm.addEventListener('submit', e => {
+    e.preventDefault();
+    const t = newTitle.value.trim();
+    if (!t) return;
+    const y = newYear.value.replace(/\D/g, '').slice(0, 4);
+    const typ = newType.value;
+    const cat = (typ === 'anime') ? 'anime' : (typ === 'manga') ? 'manga' : 'movie';
+    items.push({
+      id: 'u' + Date.now(),
+      category: cat,
+      g: 99,
+      lang: '',
+      level: '',
+      type: typ,
+      bridge: false,
+      title: t,
+      year: y,
+      note: '',
+      tongue: '',
+      status: 'planned'
+    });
+    newTitle.value = '';
+    newYear.value = '';
+    commit();
+  });
+
+  function getStatusLabel(item) {
+    if (item.status === 'planned') return 'Planned';
+    if (item.status === 'done') return 'Completed';
+    return (item.category === 'manga' || item.type === 'manga') ? 'Reading' : 'Watching';
+  }
+
+  function cycleStatus(id) {
+    const cycleMap = { planned: 'active', active: 'done', done: 'planned' };
+    const it = items.find(x => x.id === id);
+    if (it) {
+      it.status = cycleMap[it.status] || 'planned';
+      commit();
+    }
+  }
+
+  function setItemYear(id, val) {
+    const clean = String(val).replace(/\D/g, '').slice(0, 4);
+    const it = items.find(x => x.id === id);
+    if (it) {
+      it.year = clean;
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify(items)); } catch (e) {}
+    }
+  }
+
+  function moveItem(id, targetId) {
+    const idxA = items.findIndex(x => x.id === id);
+    const idxB = items.findIndex(x => x.id === targetId);
+    if (idxA >= 0 && idxB >= 0) {
+      const temp = items[idxA];
+      items[idxA] = items[idxB];
+      items[idxB] = temp;
+      commit();
+    }
+  }
+
+  function removeItem(id) {
+    items = items.filter(x => x.id !== id);
+    commit();
   }
 
   function renderTabs() {
-    const tabs = [
-      { id: 'all', label: 'All' },
-      { id: 'movie', label: 'Cinema' },
-      { id: 'anime', label: 'Anime' },
-      { id: 'manga', label: 'Manga' }
+    const tabDefs = [
+      ['all', 'All', items.length],
+      ['movie', 'Movies', items.filter(x => x.type === 'movie').length],
+      ['anime', 'Anime', items.filter(x => x.category === 'anime').length],
+      ['manga', 'Manga', items.filter(x => x.category === 'manga' || x.type === 'manga').length],
+      ['tv', 'TV Series', items.filter(x => x.type === 'tv').length]
     ];
-
     tabContainer.innerHTML = '';
-    tabs.forEach(t => {
-      const count = t.id === 'all' ? items.length : items.filter(x => x.category === t.id).length;
+    tabDefs.forEach(([val, label, count]) => {
       const btn = document.createElement('button');
-      btn.type = 'button';
       btn.className = 'tab';
+      btn.type = 'button';
       btn.setAttribute('role', 'tab');
-      btn.dataset.on = activeCategory === t.id ? 'y' : 'n';
-      btn.innerHTML = `${t.label} <span class="n">${count}</span>`;
+      btn.setAttribute('data-on', state.tab === val ? 'y' : 'n');
+      btn.setAttribute('aria-selected', state.tab === val ? 'true' : 'false');
+      btn.innerHTML = `<span>${label}</span><span class="n">${count}</span>`;
       btn.addEventListener('click', () => {
-        activeCategory = t.id;
+        state.tab = val;
         populateGenreOptions();
-        renderTabs();
         render();
       });
       tabContainer.appendChild(btn);
     });
   }
 
-  function formatLang(langCode, tongue) {
-    if (tongue) return tongue;
-    if (langCode === 'B') return 'Bangla';
-    if (langCode === 'H') return 'Hindi';
-    if (langCode === 'E') return 'English';
-    return 'World';
+  function getGroupCategoryKey(x) {
+    const prefix = x.category === 'anime' ? 200 : x.category === 'manga' ? 300 : 100;
+    return prefix + (x.g || 0);
   }
 
-  function formatLevel(lvl) {
-    if (!lvl) return '';
-    if (lvl.includes('b') && lvl.includes('i')) return 'Beginner / Intermediate';
-    if (lvl.includes('i') && lvl.includes('p')) return 'Intermediate / Pro';
-    if (lvl === 'b') return 'Beginner';
-    if (lvl === 'i') return 'Intermediate';
-    if (lvl === 'p') return 'Pro';
-    return lvl.toUpperCase();
+  function getHeaderMeta(key) {
+    if (key >= 101 && key <= 116) {
+      const idx = (key - 100) - 1;
+      return {
+        num: String(idx + 1).padStart(2, '0'),
+        title: MOVIE_GENRES[idx][1].replace(/^\d+\.\s*/, ''),
+        blurb: MOVIE_GENRES[idx][2]
+      };
+    }
+    if (key >= 201 && key <= 216) {
+      const idx = (key - 200) - 1;
+      return {
+        num: 'A' + (idx + 1),
+        title: ANIME_GENRES[idx][1].replace(/^\d+\.\s*/, ''),
+        blurb: ANIME_GENRES[idx][2]
+      };
+    }
+    if (key >= 301 && key <= 308) {
+      const idx = (key - 300) - 1;
+      return {
+        num: 'M' + (idx + 1),
+        title: MANGA_GENRES[idx][1].replace(/^\d+\.\s*/, ''),
+        blurb: MANGA_GENRES[idx][2]
+      };
+    }
+    return { num: '+', title: 'Custom Additions', blurb: 'Titles added directly in this browser.' };
   }
 
-  function cycleStatus(item) {
-    const next = { planned: 'active', active: 'done', done: 'planned' };
-    item.status = next[item.status] || 'planned';
-    commit();
-  }
-
-  function moveItem(index, direction) {
-    const target = index + direction;
-    if (target < 0 || target >= items.length) return;
-    const temp = items[index];
-    items[index] = items[target];
-    items[target] = temp;
-    commit();
+  function escapeHTML(str) {
+    return String(str || '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
   }
 
   function render() {
-    const q = searchInput.value.trim().toLowerCase();
-    const sort = sortSelect.value;
-    const status = statusSelect.value;
-    const genre = genreSelect.value;
-    const lang = langSelect.value;
-    const level = levelSelect.value;
+    renderTabs();
 
-    let filtered = items.filter(item => {
-      if (activeCategory !== 'all' && item.category !== activeCategory) return false;
-      if (status !== 'all' && item.status !== status) return false;
-      if (genre !== 'all' && String(item.g) !== String(genre)) return false;
-      if (lang !== 'all' && item.lang !== lang) return false;
-      if (level !== 'all' && (!item.level || !item.level.includes(level))) return false;
+    const q = state.q.trim().toLowerCase();
+    const curated = state.sort === 'curated';
+    const mine = state.sort === 'mine';
+    const originalIndex = new Map(items.map((x, i) => [x.id, i]));
+
+    let vis = items.filter(x => {
+      if (state.tab === 'movie' && x.type !== 'movie') return false;
+      if (state.tab === 'anime' && x.category !== 'anime') return false;
+      if (state.tab === 'manga' && x.category !== 'manga' && x.type !== 'manga') return false;
+      if (state.tab === 'tv' && x.type !== 'tv') return false;
+
+      if (state.status !== 'all' && x.status !== state.status) return false;
+      if (state.genre !== 'all' && String(x.g || 0) !== state.genre) return false;
+      if (state.lang !== 'all' && x.lang !== state.lang) return false;
+      if (state.level !== 'all' && (!x.level || !x.level.includes(state.level))) return false;
       if (q) {
-        const text = (item.title + ' ' + (item.tongue || '') + ' ' + (item.year || '') + ' ' + (item.note || '')).toLowerCase();
-        if (!text.includes(q)) return false;
+        const inTitle = (x.title || '').toLowerCase().includes(q);
+        const inTongue = (x.tongue || '').toLowerCase().includes(q);
+        if (!inTitle && !inTongue) return false;
       }
       return true;
     });
 
-    // Sorting
-    if (sort === 'az') {
-      filtered.sort((a, b) => a.title.localeCompare(b.title));
-    } else if (sort === 'new') {
-      filtered.sort((a, b) => (parseInt(b.year) || 0) - (parseInt(a.year) || 0));
-    } else if (sort === 'old') {
-      filtered.sort((a, b) => (parseInt(a.year) || 9999) - (parseInt(b.year) || 9999));
+    const yrVal = x => parseInt(x.year, 10) || 0;
+
+    if (curated) {
+      vis = vis.slice().sort((a, b) => 
+        getGroupCategoryKey(a) - getGroupCategoryKey(b) ||
+        (LANG_RANK[a.lang] ?? 9) - (LANG_RANK[b.lang] ?? 9) ||
+        (LEVEL_RANK[a.level] ?? 9) - (LEVEL_RANK[b.level] ?? 9) ||
+        originalIndex.get(a.id) - originalIndex.get(b.id)
+      );
+    } else if (state.sort === 'new') {
+      vis = vis.slice().sort((a, b) => yrVal(b) - yrVal(a));
+    } else if (state.sort === 'old') {
+      vis = vis.slice().sort((a, b) => (yrVal(a) || 9999) - (yrVal(b) || 9999));
+    } else if (state.sort === 'az') {
+      vis = vis.slice().sort((a, b) => a.title.localeCompare(b.title));
     }
 
-    countDisplay.textContent = `Showing ${filtered.length} of ${items.length} titles`;
+    countDisplay.textContent = `${vis.length} of ${items.length} titles`;
 
-    contentGroups.innerHTML = '';
-    if (filtered.length === 0) {
+    if (vis.length === 0) {
+      contentGroups.innerHTML = '';
       emptyMessage.style.display = 'block';
       return;
     }
     emptyMessage.style.display = 'none';
 
-    // Grouping: If "curated" sort and no specific text search, group by genre
-    const isCuratedGrouping = (sort === 'curated');
-
-    if (isCuratedGrouping) {
-      const groups = new Map();
-      filtered.forEach(it => {
-        const key = `${it.category}_${it.g}`;
-        if (!groups.has(key)) groups.set(key, []);
-        groups.get(key).push(it);
+    const buckets = [];
+    if (curated) {
+      let cur = null;
+      vis.forEach(x => {
+        const k = getGroupCategoryKey(x);
+        if (!cur || cur.k !== k) {
+          cur = { k, items: [] };
+          buckets.push(cur);
+        }
+        cur.items.push(x);
       });
+    } else {
+      buckets.push({ k: 0, items: vis });
+    }
 
-      let rankOffset = 1;
-      groups.forEach((groupItems, key) => {
-        const [cat, gNum] = key.split('_');
-        const gInfo = getGenreData(cat, gNum);
+    contentGroups.innerHTML = '';
 
+    buckets.forEach(bucket => {
+      const section = document.createElement('section');
+      section.style.display = 'flex';
+      section.style.flexDirection = 'column';
+      section.style.gap = '10px';
+
+      if (curated) {
+        const h = getHeaderMeta(bucket.k);
         const gh = document.createElement('div');
         gh.className = 'gh';
         gh.innerHTML = `
-          <span class="gn">${gInfo.id}</span>
+          <span class="gn">${h.num}</span>
           <div>
-            <h2 class="gt">${gInfo.title}</h2>
-            ${gInfo.desc ? `<p class="gb">${gInfo.desc}</p>` : ''}
+            <h2 class="gt">${escapeHTML(h.title)}</h2>
+            <p class="gb">${escapeHTML(h.blurb)}</p>
           </div>
-          <span class="gc">${groupItems.length} items</span>
+          <span class="gc">${bucket.items.length} titles</span>
         `;
-        contentGroups.appendChild(gh);
+        section.appendChild(gh);
+      }
 
-        groupItems.forEach((item) => {
-          contentGroups.appendChild(createRow(item, rankOffset++, sort === 'mine'));
-        });
-      });
-    } else {
-      filtered.forEach((item, idx) => {
-        contentGroups.appendChild(createRow(item, idx + 1, sort === 'mine'));
-      });
-    }
-  }
+      bucket.items.forEach((item, i) => {
+        const rowWrapper = document.createElement('div');
+        rowWrapper.style.display = 'flex';
+        rowWrapper.style.flexDirection = 'column';
+        rowWrapper.style.gap = '8px';
 
-  function createRow(item, displayRank, canReorder) {
-    const row = document.createElement('div');
-    row.className = 'row gl';
-    row.dataset.id = item.id;
+        const isMovieCat = item.category === 'movie';
+        const showLangHeader = curated && isMovieCat && !!item.lang && (i === 0 || bucket.items[i - 1].lang !== item.lang);
+        if (showLangHeader) {
+          const lh = document.createElement('div');
+          lh.className = 'lh';
+          lh.textContent = LANG_NAMES[item.lang] || 'Language';
+          rowWrapper.appendChild(lh);
+        }
 
-    const levelText = formatLevel(item.level);
-    const langText = formatLang(item.lang, item.tongue);
-    const statusLabel = item.status === 'done' ? 'Completed' : (item.status === 'active' ? 'In progress' : 'Planned');
+        const row = document.createElement('div');
+        row.className = 'row gl';
 
-    const globalIndex = items.findIndex(x => x.id === item.id);
+        let langText = '';
+        if (item.lang) {
+          langText = item.lang === 'O' ? (item.tongue || 'Other') : (LANG_NAMES[item.lang] || '');
+        } else if (item.tongue) {
+          langText = item.tongue;
+        }
 
-    row.innerHTML = `
-      <span class="rank">${displayRank}</span>
-      <div class="main">
-        <div class="ttl">
-          ${item.title}
-          <input class="yr" type="text" value="${item.year || ''}" placeholder="Year" maxlength="4" aria-label="Year">
-        </div>
-        ${item.note ? `<div class="note">${item.note}</div>` : ''}
-        <div class="meta">
-          <span class="dot" data-t="${item.type || 'movie'}" title="${item.type || 'movie'}"></span>
-          ${langText ? `<span class="chip">${langText}</span>` : ''}
-          ${levelText ? `<span class="chip">${levelText}</span>` : ''}
-          ${item.bridge ? `<span class="chip" data-k="bridge">Gateway Bridge</span>` : ''}
-        </div>
-      </div>
-      ${canReorder ? `
-        <button type="button" class="ib move-up" aria-label="Move Up" ${globalIndex === 0 ? 'disabled' : ''}>↑</button>
-        <button type="button" class="ib move-down" aria-label="Move Down" ${globalIndex === items.length - 1 ? 'disabled' : ''}>↓</button>
-      ` : ''}
-      <button type="button" class="pill" data-s="${item.status}">${statusLabel}</button>
-    `;
+        const langBadge = langText ? `<span class="chip">${escapeHTML(langText)}</span>` : '';
+        const levelBadge = item.level ? `<span class="chip">${escapeHTML(LEVEL_NAMES[item.level] || '')}</span>` : '';
+        const bridgeBadge = item.bridge ? `<span class="chip" data-k="bridge">Bridge pick</span>` : '';
 
-    // Status toggle click
-    const pill = row.querySelector('.pill');
-    pill.addEventListener('click', () => cycleStatus(item));
+        const moveControls = mine ? `
+          <div style="display: flex">
+            <button class="ib btn-up" type="button" aria-label="Move up" ${i === 0 ? 'disabled' : ''}>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10l5-5 5 5"></path></svg>
+            </button>
+            <button class="ib btn-down" type="button" aria-label="Move down" ${i === bucket.items.length - 1 ? 'disabled' : ''}>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6l5 5 5-5"></path></svg>
+            </button>
+          </div>
+        ` : '';
 
-    // Year update
-    const yrInput = row.querySelector('.yr');
-    yrInput.addEventListener('change', (e) => {
-      item.year = e.target.value.trim();
-      commit();
-    });
-
-    // Reorder buttons
-    if (canReorder) {
-      const up = row.querySelector('.move-up');
-      const down = row.querySelector('.move-down');
-      if (up) up.addEventListener('click', () => moveItem(globalIndex, -1));
-      if (down) down.addEventListener('click', () => moveItem(globalIndex, 1));
-    }
-
-    return row;
-  }
-
-  // Event Listeners for Filters
-  searchInput.addEventListener('input', render);
-  sortSelect.addEventListener('change', render);
-  statusSelect.addEventListener('change', render);
-  genreSelect.addEventListener('change', render);
-  langSelect.addEventListener('change', render);
-  levelSelect.addEventListener('change', render);
-
-  // Theme Toggle
-  themeToggle.addEventListener('click', () => {
-    const current = app.getAttribute('data-theme');
-    const next = current === 'light' ? 'cinema' : 'light';
-    app.setAttribute('data-theme', next);
-    themeLabel.textContent = next === 'light' ? 'Light Mode' : 'Cinema Mode';
-  });
-
-  // Reset to seed master
-  resetBtn.addEventListener('click', () => {
-    if (confirm('Reset your watchlist back to the curated master archive? Custom edits will be overwritten.')) {
-      items = seedMasterList();
-      commit();
-      renderTabs();
-    }
-  });
-
-  // Add Custom Title
-  addForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const titleInput = document.getElementById('newTitle');
-    const yearInput = document.getElementById('newYear');
-    const typeSelect = document.getElementById('newType');
-
-    const newObj = {
-      id: 'custom_' + Date.now(),
-      category: typeSelect.value === 'anime' ? 'anime' : (typeSelect.value === 'manga' ? 'manga' : 'movie'),
-      g: 1,
-      lang: 'O',
-      level: 'b',
-      type: typeSelect.value,
-      bridge: false,
-      title: titleInput.value.trim(),
-      year: yearInput.value.trim(),
-      note: 'Custom added',
-      tongue: '',
-      status: 'planned'
-    };
-
-    items.unshift(newObj);
-    titleInput.value = '';
-    yearInput.value = '';
-    commit();
-    renderTabs();
-  });
-
-  // Initial Load
-  populateGenreOptions();
-  renderTabs();
-  render();
-})();
-</script>
-</body>
-</html>
+        row.innerHTML = `
+          <span class="rank">${i + 1}</span>
+          <div class="main">
+            <div class="ttl">${escapeHTML(item.title)}</div>
+            ${item.note ? `<div class="note">${escapeHTML(item.note)}</div>` : ''}
+            <div class="meta">
+              <span class="dot" data-t="${escapeHTML(item.type)}"></span>
+              <span>${escapeHTML(TYPE_NAMES[item.type] || item.type)}</span>
+              ${langBadge}
+              ${levelBadge}
+              ${bridgeBadge}
+              <input class="yr" inputmode="numeric" maxlength="4" placeholder="Year" aria-label="Release year" value="${escapeHTML(item.year || '')}">
+            </div>
+          </div>
+          <button class="pill btn-status" type="button" data-s="${escapeHTML(item.status)}" aria-label="Status: ${escapeHTML(getStatusLabel(item))}">
+            ${escapeHTML(getStatusLabel(item))}
+          </button>
+          ${moveControls}
+          <button class="ib btn-remove" type="button" aria-label="Remove from list">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+              <path d="M4 4l8 8M12 4l-8 8"></path>
