@@ -69,7 +69,8 @@
     .wl button { cursor: pointer; border: 0; background: none; }
     .wl button:focus-visible, .wl input:focus-visible, .wl select:focus-visible { outline: 2px solid var(--acc); outline-offset: 2px; }
     .wl button:active { transform: scale(.97); transition: transform 100ms ease-out; }
-    .wl option { background: var(--opt); color: var(--ink); }
+    .wl option, .wl optgroup { background: #1a1820; color: #f4f1ea; }
+    .wl[data-theme="light"] option, .wl[data-theme="light"] optgroup { background: #ffffff; color: #1b1a22; }
     .beam {
       position: absolute;
       top: 0;
@@ -265,7 +266,7 @@
         <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px">
           <span class="eyebrow">Curated Master Archive</span>
           <div style="display: flex; gap: 8px">
-            <button type="button" class="nav-btn" id="resetBtn" title="Reset back to curated seed defaults">Reset to Master List</button>
+            <button type="button" class="nav-btn" id="resetBtn" title="Reset back to seed defaults">Reset to Master List</button>
             <button type="button" class="nav-btn" id="themeToggle" aria-label="Toggle theme">
               <span id="themeLabel">Cinema Mode</span>
             </button>
@@ -273,7 +274,7 @@
         </div>
         <h1 class="mast">Watch &amp; Read List</h1>
         <p style="margin: 8px 0 0; font-size: 16px; line-height: 1.55; color: var(--ink2); max-width: 680px">
-          Curated collection of Cinema (Bangla, Hindi, English, World), Anime, and Manga. Filter by medium, genre, language, or level, or switch to <strong>My order</strong> to rank titles manually.
+          Complete verified archive of Cinema (Bangla, Hindi, English, World), Anime, and Manga. Use the category tabs or filters below, or switch to <strong>My order</strong> to rank titles manually.
         </p>
       </div>
       <div class="strip" aria-hidden="true"></div>
@@ -290,7 +291,7 @@
               <path d="M10.5 10.5L14 14"></path>
             </svg>
           </span>
-          <input class="field" id="searchInput" style="width: 100%; padding-left: 38px" type="search" placeholder="Search titles, notes, or creators" aria-label="Search">
+          <input class="field" id="searchInput" style="width: 100%; padding-left: 38px" type="search" placeholder="Search titles, languages, or notes" aria-label="Search">
         </label>
         <select class="field" id="sortSelect" aria-label="Sort by">
           <option value="curated">Curated sequence</option>
@@ -298,6 +299,12 @@
           <option value="new">Newest first</option>
           <option value="old">Oldest first</option>
           <option value="az">Title A to Z</option>
+        </select>
+        <select class="field" id="formatSelect" aria-label="Filter by format">
+          <option value="all">Any format</option>
+          <option value="movie">Movies / Feature films</option>
+          <option value="tv">TV &amp; Web Series</option>
+          <option value="manga">Manga &amp; Print</option>
         </select>
         <select class="field" id="statusSelect" aria-label="Filter by status">
           <option value="all">Any status</option>
@@ -332,7 +339,6 @@
       Nothing matches the current filters. Try changing or clearing your search.
     </div>
 
-    <!-- Suggested Roadmap Section -->
     <section style="display: flex; flex-direction: column; gap: 12px; margin-top: 28px">
       <div class="gh" style="padding-top: 8px">
         <span class="gn">4</span>
@@ -355,10 +361,10 @@
         <input class="field" id="newTitle" style="flex: 1 1 220px" placeholder="Title" aria-label="New title" required>
         <input class="field" id="newYear" style="width: 96px" inputmode="numeric" maxlength="4" placeholder="Year" aria-label="Release year">
         <select class="field" id="newType" aria-label="Category">
-          <option value="movie">Movie</option>
+          <option value="movie">Movie / Film</option>
+          <option value="tv">TV / Series</option>
           <option value="anime">Anime</option>
           <option value="manga">Manga</option>
-          <option value="tv">TV / Series</option>
         </select>
         <button class="go" type="submit">Add</button>
       </div>
@@ -1186,6 +1192,23 @@
       });
     });
 
+    RAW_ANIME.forEach(r => {
+      list.push({
+        id: 'a' + (counter++),
+        category: 'anime',
+        g: r[0],
+        lang: 'O',
+        level: r[1],
+        type: r[2] === 'm' ? 'movie' : 'tv',
+        bridge: false,
+        title: r[3],
+        year: r[4] || '',
+        note: '',
+        tongue: 'Japanese',
+        status: 'planned'
+      });
+    });
+
     RAW_MANGA.forEach(r => {
       list.push({
         id: 'mg' + (counter++),
@@ -1203,34 +1226,17 @@
       });
     });
 
-    RAW_ANIME.forEach(r => {
-      list.push({
-        id: 'a' + (counter++),
-        category: 'anime',
-        g: r[0],
-        lang: 'O',
-        level: r[1],
-        type: r[2] === 'm' ? 'movie' : 'anime',
-        bridge: false,
-        title: r[3],
-        year: r[4] || '',
-        note: '',
-        tongue: 'Japanese',
-        status: 'planned'
-      });
-    });
-
     return list;
   }
 
-  const STORAGE_KEY = 'wl-master-v4';
+  const STORAGE_KEY = 'wl_master_v5';
   let items = null;
 
   try {
     const saved = localStorage.getItem(STORAGE_KEY);
     if (saved) {
       const parsed = JSON.parse(saved);
-      if (Array.isArray(parsed) && parsed.length > 50) {
+      if (Array.isArray(parsed) && parsed.length > 100) {
         items = parsed;
       }
     }
@@ -1252,6 +1258,7 @@
     tab: 'all',
     q: '',
     sort: 'curated',
+    format: 'all',
     status: 'all',
     genre: 'all',
     lang: 'all',
@@ -1264,7 +1271,7 @@
     if (savedTheme) state.theme = savedTheme;
   } catch (e) {}
 
-  const TYPE_NAMES = { movie: 'Movie', anime: 'Anime', manga: 'Manga', tv: 'TV Series' };
+  const TYPE_NAMES = { movie: 'Movie', tv: 'TV / Series', manga: 'Manga' };
   const LANG_NAMES = { B: 'Bangla', H: 'Hindi', E: 'English', O: 'Other' };
   const LEVEL_NAMES = { b: 'Beginner', bi: 'Beginner to Intermediate', i: 'Intermediate', ip: 'Intermediate to Pro', p: 'Pro' };
   const LANG_RANK = { B: 0, H: 1, E: 2, O: 3 };
@@ -1277,6 +1284,7 @@
   const tabContainer = document.getElementById('tabContainer');
   const searchInput = document.getElementById('searchInput');
   const sortSelect = document.getElementById('sortSelect');
+  const formatSelect = document.getElementById('formatSelect');
   const statusSelect = document.getElementById('statusSelect');
   const genreSelect = document.getElementById('genreSelect');
   const langSelect = document.getElementById('langSelect');
@@ -1302,37 +1310,85 @@
   updateThemeUI();
 
   resetBtn.addEventListener('click', () => {
-    if (confirm('Reset your entire list back to the verified master list? Custom entries will be restored to defaults.')) {
+    if (confirm('Reset entire archive back to master defaults? This will restore all curated categories.')) {
       items = seedMasterList();
       state.genre = 'all';
+      state.format = 'all';
+      state.q = '';
+      formatSelect.value = 'all';
+      searchInput.value = '';
       commit();
     }
   });
 
   function populateGenreOptions() {
-    const curVal = state.genre;
     genreSelect.innerHTML = '<option value="all">All genres / categories</option>';
-    let activeGenreList = MOVIE_GENRES;
-    if (state.tab === 'anime') activeGenreList = ANIME_GENRES;
-    else if (state.tab === 'manga') activeGenreList = MANGA_GENRES;
-
-    activeGenreList.forEach(([num, title]) => {
-      const opt = document.createElement('option');
-      opt.value = String(num);
-      opt.textContent = title;
-      genreSelect.appendChild(opt);
-    });
-
-    if (activeGenreList.some(([n]) => String(n) === curVal)) {
-      genreSelect.value = curVal;
+    
+    if (state.tab === 'movie') {
+      MOVIE_GENRES.forEach(([num, title]) => {
+        const opt = document.createElement('option');
+        opt.value = 'movie-' + num;
+        opt.textContent = title;
+        genreSelect.appendChild(opt);
+      });
+    } else if (state.tab === 'anime') {
+      ANIME_GENRES.forEach(([num, title]) => {
+        const opt = document.createElement('option');
+        opt.value = 'anime-' + num;
+        opt.textContent = title;
+        genreSelect.appendChild(opt);
+      });
+    } else if (state.tab === 'manga') {
+      MANGA_GENRES.forEach(([num, title]) => {
+        const opt = document.createElement('option');
+        opt.value = 'manga-' + num;
+        opt.textContent = title;
+        genreSelect.appendChild(opt);
+      });
     } else {
+      const gMovie = document.createElement('optgroup');
+      gMovie.label = 'Cinema Genres';
+      MOVIE_GENRES.forEach(([num, title]) => {
+        const opt = document.createElement('option');
+        opt.value = 'movie-' + num;
+        opt.textContent = title;
+        gMovie.appendChild(opt);
+      });
+      genreSelect.appendChild(gMovie);
+
+      const gAnime = document.createElement('optgroup');
+      gAnime.label = 'Anime Genres';
+      ANIME_GENRES.forEach(([num, title]) => {
+        const opt = document.createElement('option');
+        opt.value = 'anime-' + num;
+        opt.textContent = title;
+        gAnime.appendChild(opt);
+      });
+      genreSelect.appendChild(gAnime);
+
+      const gManga = document.createElement('optgroup');
+      gManga.label = 'Manga Genres';
+      MANGA_GENRES.forEach(([num, title]) => {
+        const opt = document.createElement('option');
+        opt.value = 'manga-' + num;
+        opt.textContent = title;
+        gManga.appendChild(opt);
+      });
+      genreSelect.appendChild(gManga);
+    }
+
+    const availableValues = Array.from(genreSelect.querySelectorAll('option')).map(o => o.value);
+    if (!availableValues.includes(state.genre)) {
       state.genre = 'all';
       genreSelect.value = 'all';
+    } else {
+      genreSelect.value = state.genre;
     }
   }
 
   searchInput.addEventListener('input', e => { state.q = e.target.value; render(); });
   sortSelect.addEventListener('change', e => { state.sort = e.target.value; render(); });
+  formatSelect.addEventListener('change', e => { state.format = e.target.value; render(); });
   statusSelect.addEventListener('change', e => { state.status = e.target.value; render(); });
   genreSelect.addEventListener('change', e => { state.genre = e.target.value; render(); });
   langSelect.addEventListener('change', e => { state.lang = e.target.value; render(); });
@@ -1351,7 +1407,7 @@
       g: 99,
       lang: '',
       level: '',
-      type: typ,
+      type: (typ === 'tv') ? 'tv' : (typ === 'manga') ? 'manga' : 'movie',
       bridge: false,
       title: t,
       year: y,
@@ -1367,7 +1423,7 @@
   function getStatusLabel(item) {
     if (item.status === 'planned') return 'Planned';
     if (item.status === 'done') return 'Completed';
-    return (item.category === 'manga' || item.type === 'manga') ? 'Reading' : 'Watching';
+    return item.category === 'manga' ? 'Reading' : 'Watching';
   }
 
   function cycleStatus(id) {
@@ -1407,10 +1463,9 @@
   function renderTabs() {
     const tabDefs = [
       ['all', 'All', items.length],
-      ['movie', 'Movies', items.filter(x => x.type === 'movie').length],
+      ['movie', 'Cinema & TV', items.filter(x => x.category === 'movie').length],
       ['anime', 'Anime', items.filter(x => x.category === 'anime').length],
-      ['manga', 'Manga', items.filter(x => x.category === 'manga' || x.type === 'manga').length],
-      ['tv', 'TV Series', items.filter(x => x.type === 'tv').length]
+      ['manga', 'Manga', items.filter(x => x.category === 'manga').length]
     ];
     tabContainer.innerHTML = '';
     tabDefs.forEach(([val, label, count]) => {
@@ -1423,6 +1478,7 @@
       btn.innerHTML = `<span>${label}</span><span class="n">${count}</span>`;
       btn.addEventListener('click', () => {
         state.tab = val;
+        state.genre = 'all';
         populateGenreOptions();
         render();
       });
@@ -1480,15 +1536,27 @@
     const originalIndex = new Map(items.map((x, i) => [x.id, i]));
 
     let vis = items.filter(x => {
-      if (state.tab === 'movie' && x.type !== 'movie') return false;
-      if (state.tab === 'anime' && x.category !== 'anime') return false;
-      if (state.tab === 'manga' && x.category !== 'manga' && x.type !== 'manga') return false;
-      if (state.tab === 'tv' && x.type !== 'tv') return false;
+      if (state.tab !== 'all' && x.category !== state.tab) return false;
+
+      if (state.format !== 'all') {
+        if (state.format === 'movie' && x.type !== 'movie') return false;
+        if (state.format === 'tv' && x.type !== 'tv') return false;
+        if (state.format === 'manga' && x.type !== 'manga') return false;
+      }
 
       if (state.status !== 'all' && x.status !== state.status) return false;
-      if (state.genre !== 'all' && String(x.g || 0) !== state.genre) return false;
+
+      if (state.genre !== 'all') {
+        const parts = state.genre.split('-');
+        if (parts.length === 2) {
+          const [cat, gNum] = parts;
+          if (x.category !== cat || String(x.g || 0) !== gNum) return false;
+        }
+      }
+
       if (state.lang !== 'all' && x.lang !== state.lang) return false;
       if (state.level !== 'all' && (!x.level || !x.level.includes(state.level))) return false;
+
       if (q) {
         const inTitle = (x.title || '').toLowerCase().includes(q);
         const inTongue = (x.tongue || '').toLowerCase().includes(q);
@@ -1608,7 +1676,7 @@
             ${item.note ? `<div class="note">${escapeHTML(item.note)}</div>` : ''}
             <div class="meta">
               <span class="dot" data-t="${escapeHTML(item.type)}"></span>
-              <span>${escapeHTML(TYPE_NAMES[item.type] || item.type)}</span>
+              <span>${escapeHTML(item.category === 'anime' ? (item.type === 'movie' ? 'Anime Film' : 'Anime Series') : TYPE_NAMES[item.type] || item.type)}</span>
               ${langBadge}
               ${levelBadge}
               ${bridgeBadge}
@@ -1622,3 +1690,41 @@
           <button class="ib btn-remove" type="button" aria-label="Remove from list">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
               <path d="M4 4l8 8M12 4l-8 8"></path>
+            </svg>
+          </button>
+        `;
+
+        const yrInput = row.querySelector('.yr');
+        yrInput.addEventListener('input', e => setItemYear(item.id, e.target.value));
+
+        const statusBtn = row.querySelector('.btn-status');
+        statusBtn.addEventListener('click', () => cycleStatus(item.id));
+
+        const removeBtn = row.querySelector('.btn-remove');
+        removeBtn.addEventListener('click', () => removeItem(item.id));
+
+        if (mine) {
+          const upBtn = row.querySelector('.btn-up');
+          if (upBtn && i > 0) {
+            upBtn.addEventListener('click', () => moveItem(item.id, bucket.items[i - 1].id));
+          }
+          const downBtn = row.querySelector('.btn-down');
+          if (downBtn && i < bucket.items.length - 1) {
+            downBtn.addEventListener('click', () => moveItem(item.id, bucket.items[i + 1].id));
+          }
+        }
+
+        rowWrapper.appendChild(row);
+        section.appendChild(rowWrapper);
+      });
+
+      contentGroups.appendChild(section);
+    });
+  }
+
+  populateGenreOptions();
+  render();
+})();
+</script>
+</body>
+</html>
